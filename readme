@@ -1,0 +1,31 @@
+----Menu---- //template maestro
+Title
+Logo
+Products
+Background
+
+----Categories----
+Name
+Description
+Etiquetas //evaluar 
+
+----Products----
+Categories //populate con categories
+Name
+Price
+Image (optional)
+Alergénos
+
+----busqueda----
+Busqueda por nombre
+Filtrar por alergenos
+Ordenar Precio
+Ordenar Alfabeticamente
+
+
+---restaurantes---
+address - location
+phones
+emails
+delivery //boolean
+schedules

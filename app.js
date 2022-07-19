@@ -8,13 +8,13 @@ const mongoose = require('mongoose');
 // Creamos la aplicación servidor ejecutando express como una función
 const app = express();
 
-app.set("views", `${__dirname}/views`);
+app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 app.use(express.static(`${__dirname}/public`));
 app.use(express.urlencoded({ extended: false }));
+require("./config/hbs.config");
 
 // require("./config/db.config");
-// require("./config/hbs.config");
 
 
 app.use((req, res, next) => {
