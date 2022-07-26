@@ -1,0 +1,19 @@
+<a href="/menus/new" class="btn btn-secondary">New Menu</a>
+<hr/>
+
+
+<div class="row">
+    {{#each menus as |menu|}}
+        <div class="col-3">
+            <div class="card mb-4">
+                <img src="{{menu.logo}}" class="card-img-top" alt="...">
+                <img src="{{menu.background}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{menu.title}}</h5>
+                    <p class="card-text">{{menu.description}}</p>
+                        <a href="menus/{{menu.id}}" class="btn btn-primary">See detail</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

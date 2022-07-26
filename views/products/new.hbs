@@ -1,0 +1,30 @@
+<h2 class="mb-2">Create new Menu</h2>
+<form action="/products" method="POST">
+
+  <div class="input-group mb-1">
+    <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+    <input type="text" name="name" value="{{ product.name }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter product name..." />
+    {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
+  </div>
+
+  <div class="input-group mb-1">
+    <span class="input-group-text"><i class="fa fa-edit fa-fw"></i></span>
+    <textarea class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Product description">{{ product.description}}</textarea>
+    {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
+  </div>
+
+  <div class="input-group mb-1">
+    <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
+    <input type="text" name="image" value="{{ product.image }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+      placeholder="Enter product image url..." />
+    {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+  </div>
+
+ <div class="input-group mb-1">
+    <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+    <input type="text" name="price" value="{{ product.price }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter product price..." />
+    {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

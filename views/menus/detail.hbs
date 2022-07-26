@@ -1,0 +1,11 @@
+<h1>Menu</h1>
+
+<p>{{menu.title}}</p>
+<img src="{{menu.logo}}" class="card-img-top" alt="...">
+<img src="{{menu.background}}" class="card-img-top" alt="...">
+
+<form action="/menus/{{menu.id}}/delete" method="post">
+    <button type="submit">Delete menu</button>
+</form>
+
+<a href="/menus">Go to list</a>

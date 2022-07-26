@@ -1,0 +1,19 @@
+<a href="/productss/new" class="btn btn-secondary">New Product</a>
+<hr/>
+
+
+<div class="row">
+    {{#each productss as |product|}}
+        <div class="col-3">
+            <div class="card mb-4">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.price}}</p>
+                    <p class="card-text">{{product.description}}</p>
+                    <a href="menus/{{product.id}}" class="btn btn-primary">See detail</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
