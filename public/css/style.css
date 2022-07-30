@@ -1,0 +1,55 @@
+.bg {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          rgba(0,49,98,1) 0%, 
+          rgba(36,123,160,1) 25%, 
+          rgba(31,72,126,1) 51%, 
+          rgba(0,0,0,1) 100%
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+  
+  @keyframes AnimateBG { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  } 
+
+
+p{
+  color: white
+}
+
+.glassmorphism {
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 17px );
+  -webkit-backdrop-filter: blur( 17px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.btn-outline-primary{
+  color: white;
+  border: #1F487E solid;
+  background-color: #1F487E;
+}
+
+.btn-outline-primary:hover{
+  background-color: #102c51;
+  color:  rgb(255, 255, 255);
+  border: #1F487E solid;
+}
+
+.handImage{
+  width: 100%;
+}
+
+.navbar{
+  padding:0
+}

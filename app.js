@@ -1,12 +1,14 @@
 require('dotenv').config();
 const express = require("express");
 const createError = require('http-errors');
+const path = require('path')
 
 const app = express();
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
 
 
