@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 require("./config/db.config");
 require("./config/hbs.config");
 
+const { session, loadUser } = require("./config/session.config");
+app.use(session);
+app.use(loadUser);
 
 app.use((req, res, next) => {
   const path = req.path;

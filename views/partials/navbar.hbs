@@ -14,6 +14,16 @@
       <button class="btn btn-outline-primary mx-1"> Sign In</button>
     </div>
     <div class="col-0 hamburger" id="hamburgerMenu"></div>
+
+    <div>
+    {{#if currentUser}}
+      <a href="/menus">Menus</a>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+       {{currentUser.name}}
+    </div>
+
   </nav>
 </div>
 

@@ -1,0 +1,10 @@
+<p>{{user.name}}</p>
+<p>{{user.email}}</p>
+
+<hr/>
+
+<ul>
+{{#each user.menus as |menu|}}
+    <li>{{menu.title}}</li>
+{{/each}}
+</ul>
