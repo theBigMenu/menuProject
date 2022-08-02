@@ -10,31 +10,48 @@
       </div>
     </a>
     <div class="d-flex col-2">
-      <button class="btn btn-outline-light mx-1"> Login</button>
-      <button class="btn btn-outline-primary mx-1"> Sign In</button>
+
+      <a href="/login"><button class="btn btn-outline-light mx-1"> Login</button></a>
+      <a href="/register"><button class="btn btn-outline-primary mx-1"> Sign In</button></a>
     </div>
     <div class="col-0 hamburger" id="hamburgerMenu"></div>
-
-    <div>
-    {{#if currentUser}}
-      <a href="/menus">Menus</a>
-    {{else}}
-      <a href="/login">Login</a>
-    {{/if}}
-       {{currentUser.name}}
-    </div>
-
   </nav>
 </div>
 
 
 
-<div class="popup hidden" id="myMenuNav">
-	<div class="wrapper glassmorphism">
-    <ul>
-      <a href="/"><li>Home</li></a>
-      <a href="/"><li>Login</li></a>
-      <a href="/menus"><li>Menu</li></a>
-    </ul>
+<div class="popup hidden " id="myMenuNav">
+	<div class="wrapper glassmorphism list-group d-flex justify-content-center align-items-center">
+      {{#if currentUser}}
+        <div class="row">
+          <p style="color:black;">Welcome Back {{currentUser.name}}</p>
+        </div>
+
+        <div class="row">
+              <h2>THE MENU OPTIONS</h2>
+        </div>
+
+        <div class="row">
+          <ul class="d-flex col-12 nobull justify-content-center">
+            <li><a class="nav-group-item" href="/menus/new">Create New Menu</a></li>
+            <li><a class="nav-group-item" href="/menus">My Menus</li></a></li>
+          </ul>
+        </div>
+      {{/if}}
+
+      <br>
+
+        <div class="row">
+            <h2>OUR AWESOME WEB</h2>
+        </div>
+
+        <div class="row">
+            <ul class="d-flex col-12 nobull justify-content-center">
+            <li><a class="nav-group-item" href="/">Home</a></li>
+            <li><a class="nav-group-item" href="/">The Team</a></li>
+            <li><a class="nav-group-item" href="/">Contact and Suport</a></li>
+          </ul>
+        </div>
+
 	</div>
 </div>
