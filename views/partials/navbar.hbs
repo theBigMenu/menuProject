@@ -7,8 +7,17 @@
       </div>
     </a>
     <div>
-      <button class="btn btn-outline-light"> Login</button>
-      <button class="btn btn-outline-primary"> Sign In</button>
+    {{#if currentUser}}
+      <a href="/menus">Menus</a>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+       {{currentUser.name}}
     </div>
+    <nav class="navbar bg-light">
+
+
+    
+</nav>
   </nav>
 </div>
