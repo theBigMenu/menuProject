@@ -1,39 +1,46 @@
-<div class="container">
-  <div class="row">
+<div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5">
+  <div class="row d-flex justify-content-center align-items-center">
     <div class="col-12 d-flex justify-content-center align-items-center"> 
-      <h2 class="mb-2">Create a New Menu</h2>
+      <h1 class="mb-4 create-menu">Create a New Menu</h1>
     </div> 
   </div>
-  <div class="row">
-    <div class="col-12 d-flex justify-content-center align-items-center"> 
-      <form action="/menus" method="POST">
-        <div class="input-group mb-1">
+  <div class="row justify-content-center">
+    <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
+      <form action="/menus" method="POST" class="col-10">
+
+        <label for="title">Title</label>
+        <div class="input-group mb-3 ">
           <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
-          <input type="text" name="title" value="{{ menu.title }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter menu title..." />
+          <input id="title" type="text" name="title" value="{{ menu.title }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter menu title..." />
           {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
         </div>
 
-        <div class="input-group mb-1">
+        <label for="description">Description</label>
+        <div class="input-group mb-3">
           <span class="input-group-text"><i class="fa fa-edit fa-fw"></i></span>
-          <textarea class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ menu.description}}</textarea>
+          <textarea id="description" placeholder="Describe your menu here..." class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ menu.description}}</textarea>
           {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
         </div>
 
-        <div class="input-group mb-1">
+        <label for="logo">Logo</label>
+        <div class="input-group mb-3">
           <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
-          <input type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
-            placeholder="Enter menu logo url..." />
+          <input id="logo" type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+            placeholder="Enter your logo url..." />
           {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
         </div>
 
-        <div class="input-group mb-1">
+        <label for="background">Background</label>
+        <div class="input-group mb-4">
             <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
-            <input type="text" name="background" value="{{ menu.background }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
-              placeholder="Enter menu nackground url..." />
+            <input id="background" type="text" name="background" value="{{ menu.background }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+              placeholder="Enter menu background url..." />
             {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   </div>
