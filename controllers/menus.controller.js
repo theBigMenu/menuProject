@@ -11,7 +11,6 @@ module.exports.list = (req, res, next) => {
 }
 
 module.exports.detail = (req, res, next) => {
-
   Menu.findById(req.params.id)
     .then((menu) => res.render("menus/detail", { menu }))
     .catch((error) => next(error));

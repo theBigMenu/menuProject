@@ -29,3 +29,10 @@ phones
 emails
 delivery //boolean
 schedules
+
+---EXTRA INFO FOR RESTAURANTS---
+lastOrderHours
+holidays
+openHours
+redes sociales
+web

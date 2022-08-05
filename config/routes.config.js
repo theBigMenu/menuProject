@@ -2,15 +2,21 @@ const express = require('express');
 const router = express.Router();
 const secure = require("../middlewares/secure.mid");
 
-const { misc, menus, products, auth, users } = require('../controllers');
+const { misc, menus, products, auth, users, restaurants } = require('../controllers');
 
 
 router.get('/', misc.home);
 
+router.get("/restaurants/new", secure.isAuthenticated, restaurants.new);
+// router.get("/restaurants", secure.isAuthenticated, restaurants.list);
+router.get("/restaurants", secure.isAuthenticated, restaurants.list);
+router.post("/restaurants", secure.isAuthenticated, restaurants.create);
+// router.get("/restaurants/:id", secure.isAuthenticated, restaurants.detail);
+
 router.get("/menus", secure.isAuthenticated, menus.list);
+router.post("/menus", secure.isAuthenticated, menus.create);
 router.get("/menus/new", secure.isAuthenticated, menus.new);
 router.get("/menus/:id", secure.isAuthenticated, menus.detail);
-router.post("/menus", secure.isAuthenticated, menus.create);
 router.post("/menus/:id/delete", secure.isAuthenticated, menus.delete);
 
 router.get("/products", secure.isAuthenticated, products.list);

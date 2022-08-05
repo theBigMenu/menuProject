@@ -47,9 +47,8 @@ menuSchema.pre("validate", function (next) {
     this.image = this.image || undefined;
     this.description = this.description || undefined;
     next();
-  });
-  
-  const Menu = mongoose.model("Menu", menuSchema);
+});
 
-  module.exports = Menu;
-  
+const Menu = mongoose.model("Menu", menuSchema);
+
+module.exports = Menu;

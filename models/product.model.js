@@ -27,7 +27,7 @@ const productSchema = new Schema ({
         },
         description:{
             type: String,
-            maxLength: [150, "Title needs at least 150 chars"],
+            maxLength: [150, "Title needs at max 150 chars"],
         }
 })
 
@@ -35,8 +35,8 @@ productSchema.pre("validate", function (next) {
     this.image = this.image || undefined;
     this.description = this.description || undefined;
     next();
-  });
-  
-  const Product = mongoose.model("Product", productSchema);
+});
 
-  module.exports = Product;
+const Product = mongoose.model("Product", productSchema);
+
+module.exports = Product;

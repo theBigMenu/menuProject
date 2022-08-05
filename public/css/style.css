@@ -206,7 +206,7 @@ ul li:last-child {
   border-right: solid 0px
 }
 
-.form-control{
+.form-control,  .form-select{
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid rgba(255, 255, 255, 0.252);
   backdrop-filter: blur( 25px );
@@ -216,7 +216,17 @@ ul li:last-child {
 }
 
 
-.form-control:focus, .form-control:active{
+option{
+  background-color: #1F487E;
+  color: white;
+}
+
+option:focus, option:hover{
+  background-color: white;
+  color: #1F487E;
+}
+
+.form-control:focus, .form-control:active, .form-select:focus, .form-select:active {
   border: 1px solid rgba(255, 255, 255, 0.252);
   box-shadow: 0 0 0 .1rem rgba(255, 255, 255, 0.252) ;
 }
@@ -241,6 +251,7 @@ label{
   width: 400px;
   max-width: 25%;
 }
+
 
 .input-group-text{
   background-color: #1F487E;
@@ -286,7 +297,7 @@ label{
   /* background-color: rgba(255, 255, 255, 0.237) ; */
   clip-path: circle();
   width: 170px;
-  height: 1700px;
+  height: 170px;
 }
 
 
@@ -299,6 +310,37 @@ label{
   max-width: 90%; 
 }
 
-.position-menu-logo{
 
+span label{
+  margin: 0 0 0 4 !important;
+  font-size: 12px !important;
+  
+}
+
+.container-new-restaurant{
+  width: 1200px;
+  max-width: 75%;
+}
+
+
+.input-group-text{
+  width: 130px;
+}
+
+.form-check-input{
+  background-color: rgba(255, 255, 255, 0.252);
+  border: 1px solid rgba(255, 255, 255, 0.252);
+  backdrop-filter: blur( 25px );
+  -webkit-backdrop-filter: blur( 25px );
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-check-input:checked {
+  background-color: #1F487E;
+  border-color: #1F487E;
+}  
+
+.form-check-input:focus{
+  box-shadow: 0 0 0 .1rem rgba(255, 255, 255, 0.252) ;
 }
