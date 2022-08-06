@@ -8,10 +8,10 @@ const { misc, menus, products, auth, users, restaurants } = require('../controll
 router.get('/', misc.home);
 
 router.get("/restaurants/new", secure.isAuthenticated, restaurants.new);
-// router.get("/restaurants", secure.isAuthenticated, restaurants.list);
 router.get("/restaurants", secure.isAuthenticated, restaurants.list);
 router.post("/restaurants", secure.isAuthenticated, restaurants.create);
-// router.get("/restaurants/:id", secure.isAuthenticated, restaurants.detail);
+router.get("/restaurants/:id", secure.isAuthenticated, restaurants.detail);
+router.post("/restaurants/:id/delete", secure.isAuthenticated, restaurants.delete);
 
 router.get("/menus", secure.isAuthenticated, menus.list);
 router.post("/menus", secure.isAuthenticated, menus.create);
