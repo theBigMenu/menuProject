@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+const categoriesRestaurant = require('../data/categories.restaurants.json')
 
 const restaurantSchema = new Schema ({
         name: {
@@ -8,10 +9,11 @@ const restaurantSchema = new Schema ({
             maxLength: [60, "Title needs at least 60 chars"],
             required: true,
         },
-        category: { 
-            type: String,
-            required: true,
-            enum: ['Restaurant', 'Fast Food', 'Buffet', 'Coffee/Bar'],
+        category: {
+            type: [{
+                type: String,
+                enum: categoriesRestaurant
+            }]
         },
         logo: {
             type: String,
@@ -35,18 +37,18 @@ const restaurantSchema = new Schema ({
         delivery: { 
             type: Boolean,
             default: false,
-            validate: {
-                validator: function (boolean) {
-                try {
-                    if (boolean === true){
-                        return true;
-                    }   
-                    } catch (error) {
-                    return false;
-                    }
-                },
-                message: (image) => `Invalid URL`,
-                },
+            // validate: {
+            //     validator: function (boolean) {
+            //     try {
+            //         if (boolean === true){
+            //             return true;
+            //         }   
+            //         } catch (error) {
+            //         return false;
+            //         }
+            //     },
+            //     message: (image) => `Invalid URL`,
+            //     },
             required: true,
         },        
         address:{

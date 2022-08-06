@@ -21,14 +21,21 @@
             <i class="fa fa-map-marker fa-fw"></i>
             <label for="category">Category</label>
           </span>
-          <select id="category" name="category" value="{{ restaurant.name }}" class="form-select {{#if errors.category }}is-invalid{{/if}}" aria-label="Default select example">
+
+          <select name="category" id="category">
+            {{#each categoriesRestaurant as |category|}}
+              <option value="{{category}}">{{category}}</option>
+            {{/each}}
+          </select>
+
+          {{!-- <select id="category" name="category" value="{{ restaurant.name }}" class="form-select {{#if errors.category }}is-invalid{{/if}}" aria-label="Default select example">
             <option selected>Select your main category:</option>
             <option value="Restaurant">Restaurant</option>            
             <option value="Fast Food">Fast Food</option>
             <option value="Buffet">Buffet</option>
             <option value="Coffee/Bar">Coffee/Bar</option>
           </select>
-          {{#if errors.category }}<div class="invalid-feedback">{{ errors.category }}</div>{{/if}}
+          {{#if errors.category }}<div class="invalid-feedback">{{ errors.category }}</div>{{/if}} --}}
         </div>
 
         <div class="input-group mb-3">
@@ -38,7 +45,7 @@
           </span>
           <input id="logo" type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if restaurant.logo}}is-invalid{{/if}}"
             placeholder="Enter your logo url..." />
-          {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+          {{#if errors.logo }}<div class="invalid-feedback">{{ errors.logo }}</div>{{/if}}
 
           <span class="input-group-text d-flex justify-content-center align-items-center ">
             <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
@@ -49,8 +56,8 @@
 
           <div class="form-check form-switch mx-3">
               <div class="d-flex justify-content-center align-items-center">
-              <input class="form-check-input" type="checkbox" role="switch" id="Delivery" name="Delivery" value="true">
-              <label class="form-check-label m-1" for="Delivery">Delivery</label>
+              <input class="form-check-input" type="checkbox" role="switch" id="delivery" name="delivery" value="{{restaurant.delivery}}">
+              <label class="form-check-label m-1" for="delivery">Delivery</label>
             </div>
           </div>
         </div>
