@@ -37,18 +37,6 @@ const restaurantSchema = new Schema ({
         delivery: { 
             type: Boolean,
             default: false,
-            // validate: {
-            //     validator: function (boolean) {
-            //     try {
-            //         if (boolean === true){
-            //             return true;
-            //         }   
-            //         } catch (error) {
-            //         return false;
-            //         }
-            //     },
-            //     message: (image) => `Invalid URL`,
-            //     },
             required: true,
         },        
         address:{
