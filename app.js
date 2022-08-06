@@ -42,5 +42,5 @@ app.use((error, req, res, next) => {
    res.status(status).render(`errors/500`, { message, metadata });
  });
 
-const port = 3000;
+const port = process.eventNames.PORT||3000;
 app.listen(port, () => console.log(`Application listening at port ${port}`));
