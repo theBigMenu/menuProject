@@ -15,7 +15,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1F487E;
+  background: #008c93;
   border: 1px solid white;
   border-top: 0px;
   border-bottom: 0p
@@ -23,10 +23,10 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #051e3f;
+  background: #02c1cb;
 }
 
-.bg {
+/* .bg {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -41,8 +41,26 @@ body {
           rgba(0,0,0,1) 100%
     );  
     animation: AnimateBG 20s ease infinite;
-  }
+  } */
   
+  .bg {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+          -45deg, 
+          #DC493A 0%, 
+          #E2573C 25%, 
+          #E7643D 50%, 
+          #F27E3F 100%
+
+    );  
+    animation: AnimateBG 20s ease infinite;
+  }
+
   @keyframes AnimateBG { 
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -57,17 +75,16 @@ p{
 .glassmorphism {
   background: rgba( 255, 255, 255, 0.2 );
   box-shadow: 0 8px 32px 0 rgba(2, 4, 36, 0.37);
-  backdrop-filter: blur( 17px );
-  -webkit-backdrop-filter: blur( 17px );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   transition: all 0.5s ease-in-out;
 }
 
 .glassmorphism:hover {
-  background: rgba(255, 255, 255, 0.444);
   box-shadow: 0 8px 32px 0 rgba(2, 4, 36, 0.777);
-  backdrop-filter: blur( 17px );
-  -webkit-backdrop-filter: blur( 17px );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
@@ -82,7 +99,6 @@ p{
 }
 
 .glassmorphism-2:hover {
-  background: rgba(255, 255, 255, 0.377);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.548);
   backdrop-filter: blur( 25px );
   -webkit-backdrop-filter: blur( 25px );
@@ -92,15 +108,15 @@ p{
 
 .btn-primary{
   color: white;
-  border: #1F487E solid;
-  background-color: #1F487E;
+  border: #008c93 solid;
+  background-color: #008c93;
   transition: all 0.5s ease-in-out;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
-  background-color: #102c51;
+  background-color: #02c1cb;
   color:  rgb(255, 255, 255);
-  border: #1F487E solid;
+  border: #02c1cb solid;
 }
 
 .btn-check:focus+.btn, .btn:focus{
@@ -173,7 +189,7 @@ hr {
 
 .nav-group-item{
   color: white;
-  background: #1F487E;
+  background: #008c93;
   backdrop-filter: blur( 5px );
   -webkit-backdrop-filter: blur( 5px );
   padding: 5px 20px;
@@ -184,7 +200,7 @@ hr {
 
 
 .nav-group-item:hover, .nav-group-item:active{
-  color: #1F487E;
+  color: #008c93;
   box-shadow: 0 8px 32px 0 rgba(3, 3, 4, 0.095);
   background-color: white;
 }
@@ -217,13 +233,13 @@ ul li:last-child {
 
 
 option{
-  background-color: #1F487E;
+  background-color: #008c93;
   color: white;
 }
 
 option:focus, option:hover{
   background-color: white;
-  color: #1F487E;
+  color: #008c93;
 }
 
 .form-control:focus, .form-control:active, .form-select:focus, .form-select:active {
@@ -254,8 +270,8 @@ label{
 
 
 .input-group-text{
-  background-color: #1F487E;
-  border: 1px solid  #1F487E;
+  background-color: #008c93;
+  border: 1px solid  #008c93;
   color: white;
 }
 
@@ -289,7 +305,7 @@ label{
 }
 
 .card-title{
-  color: #1F487E;
+  color: #008c93;
   font-weight: bold;
 }
 
@@ -337,8 +353,8 @@ span label{
 }
 
 .form-check-input:checked {
-  background-color: #1F487E;
-  border-color: #1F487E;
+  background-color: #008c93;
+  border-color: #008c93;
 }  
 
 .form-check-input:focus{
@@ -352,4 +368,65 @@ span label{
   height: 170px;
 }
 
+.accordion-item:first-of-type, .accordion-item:last-of-type  {
+  border-radius: 0;
+}
 
+.accordion-button{
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur( 17px );
+  -webkit-backdrop-filter: blur( 17px );
+  border: 0 0 1px 0 solid rgba( 255, 255, 255, 0.18 );
+  color: black;
+  padding: 10px 60px;
+  transition: all 0.5s ease-in-out;
+  font-weight: bolder;
+
+}
+
+.accordion-item{
+  background-color: rgba( 255, 255, 255, 0.1 ) !important;
+  width: 400px;
+  color: black;
+  border: 0px;
+}
+
+.accordion-button:active, .accordion-button:focus {
+  color: black;
+  border: 0 solid;
+  font-weight: bold;
+  border-color:rgba(255, 255, 255, 0.334);
+  box-shadow: 0 0 0 .1rem rgba(255, 255, 255, 0.568) ;
+}
+
+.accordion-button:not(.collapsed), button.accordion-button::after{
+  color: black !important;
+}
+
+.accordion-body{
+  background-color: rgba( 255, 255, 255, 0.2 ) !important;
+  width: 400px;
+}
+
+.side-restauranta-info{
+  width: 400px;
+  height: 100%;
+}
+
+
+.no-border{
+  border: 0px;
+}
+
+
+
+
+
+.accordion-button.collapsed::after {
+  background-image: url("https://icons-for-free.com/download-icon-chevron+down-1325051844264325845_256.png");
+}
+
+.accordion-button:not(.collapsed)::after {
+  color: yellow;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Chevron_up_font_awesome.svg/512px-Chevron_up_font_awesome.svg.png");
+}
