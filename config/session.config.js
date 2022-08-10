@@ -3,6 +3,8 @@ const expressSession = require("express-session");
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/project2'
+
 const session = expressSession({
   secret: process.env.SESSION_SECRET || "super secret",
   resave: false,

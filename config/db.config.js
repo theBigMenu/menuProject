@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/project2'
 
-mongoose.connect('mongodb://localhost/project2');
+mongoose.connect(MONGODB_URI);
 
 // When successfully connected
 mongoose.connection.on('connected', () => console.log('Mongoose default connection open'));
@@ -18,3 +19,4 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+

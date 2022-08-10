@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+const categoriesAllergens = require('../data/categories.allergens.json')
 
 const productSchema = new Schema ({
         name: {
@@ -28,6 +29,12 @@ const productSchema = new Schema ({
         description:{
             type: String,
             maxLength: [150, "Title needs at max 150 chars"],
+        },
+        allergens:{
+            type: [{
+                type: String,
+                enum: categoriesAllergens
+            }]
         }
 })
 
