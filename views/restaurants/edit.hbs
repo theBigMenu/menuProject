@@ -33,9 +33,14 @@
     </div>
 
 </div> --}}
-<div class="col-12 justify-content-start position-absolute">
+
+
+
+
+
+<div class="col-12 justify-content-start position-absolute ">
         <div class="col-3 d-flex side-restauranta-info justify-content-start">
-            <div class="glassmorphism-no-hover py-5 full-heigth">
+            <div class="glassmorphism-no-hover py-5 full-heigth ">
                     <div class="row justify-content-center position-menu-logo mt-5 pt-5">
                         <div class="position-relative logo-background-circle d-flex justify-content-center align-items-center text-center">
                         </div> 
@@ -43,7 +48,6 @@
                             <img src="{{restaurant.logo}}" class="card-img-top menu-logo" alt="...">
                         </div>
                     </div>
-
 
                     <div class="accordion mt-5 text-center" id="accordionExample">
                         <div class="accordion-item">
@@ -99,8 +103,8 @@
                         </div>
                     </div>
 
-    <div class="container  ">
-        <div class="row mt-4 ">
+    <div class="container">
+        <div class="row mt-4">
             <div class="col-6 d-flex justify-content-center align-items-center text-center">
                     <a href="/restaurants">  <button type="submit" class="btn btn-primary"> Go Back </button> </a>
             </div>
@@ -118,4 +122,109 @@
 
             </div>
         </div>
+</div>
+{{!-- MAIN --}}
+
+<div class="container glassmorphism-no-hover pt-5 pb-5 mt-5 menu-open margin-details ">
+
+
+    <div class="row justify-content-center align-items-center">
+
+<div class="container  container-new-restaurant  mt-5">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 d-flex justify-content-center align-items-center"> 
+      <h1 class="mb-4 create-menu">Update a {{ restaurant.name }}</h1>
+    </div> 
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
+      <form action="/restaurants/{{restaurant.id}}/edit" method="POST" class="col-10">
+
+        
+        <div class="input-group mb-3 ">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-tag fa-fw"></i>
+            <label for="name">Name</label>
+          </span>
+          <input id="name" type="text" name="name" value="{{ restaurant.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter the restaurant name..." />
+          {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
+
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-map-marker fa-fw"></i>
+            <label for="category">Category</label>
+          </span>
+
+          <select name="category" id="category" class="form-select">
+            {{#each categoriesRestaurant as |category|}}
+              <option value="{{category}}">{{category}}</option>
+            {{/each}}
+          </select>
+
+          {{!-- <select id="category" name="category" value="{{ restaurant.name }}" class="form-select {{#if errors.category }}is-invalid{{/if}}" aria-label="Default select example">
+            <option selected>Select your main category:</option>
+            <option value="Restaurant">Restaurant</option>            
+            <option value="Fast Food">Fast Food</option>
+            <option value="Buffet">Buffet</option>
+            <option value="Coffee/Bar">Coffee/Bar</option>
+          </select>
+          {{#if errors.category }}<div class="invalid-feedback">{{ errors.category }}</div>{{/if}} --}}
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-picture-o fa-fw"></i>
+            <label for="logo">Logo</label>
+          </span>
+          <input id="logo" type="text" name="logo" value="{{ restaurant.logo }}" class="form-control {{#if restaurant.logo}}is-invalid{{/if}}"
+            placeholder="Enter your logo url..." />
+          {{#if errors.logo }}<div class="invalid-feedback">{{ errors.logo }}</div>{{/if}}
+
+          <span class="input-group-text d-flex justify-content-center align-items-center ">
+            <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
+            <label for="phoneNumber">Telehone</label> 
+          </span>
+          <input id="phoneNumber" type="tel" name="phoneNumber" value="{{ restaurant.phoneNumber }}" class="form-control {{#if errors.phoneNumber }}is-invalid{{/if}}" placeholder="Write the restaurant phone number..." />
+          {{#if errors.phoneNumber }}<div class="invalid-feedback">{{ errors.phoneNumber }}</div>{{/if}}
+
+          <div class="form-check form-switch mx-3">
+              <div class="d-flex justify-content-center align-items-center">
+              <input class="form-check-input" type="checkbox" role="switch" id="delivery" name="delivery" {{#if restaurant.delivery}}checked{{/if}} value="true">
+              <label class="form-check-label m-1" for="delivery">Delivery</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-map-marker fa-fw"></i>
+            <label for="address">Address</label>
+          </span>
+          <textarea id="address" placeholder="Type your full address here..." class="form-control {{#if errors.address }}is-invalid{{/if}}" name="address" aria-label="Menu address">{{ restaurant.address}}</textarea>
+          {{#if errors.address }}<div class="invalid-feedback">{{ errors.address }}</div>{{/if}}
+        </div>
+
+
+        <div class="input-group mb-3">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-edit fa-fw"></i>
+            <label for="description">Description</label>
+          </span>
+          <textarea id="description" placeholder="Describe your menu here..." class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ restaurant.description}}</textarea>
+          {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
+        </div>
+        
+        <hr class="mt-5"/>    
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-primary">Update Restaurant</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+
+
 </div>

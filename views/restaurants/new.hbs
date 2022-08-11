@@ -43,7 +43,7 @@
             <i class="fa fa-picture-o fa-fw"></i>
             <label for="logo">Logo</label>
           </span>
-          <input id="logo" type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if restaurant.logo}}is-invalid{{/if}}"
+          <input id="logo" type="text" name="logo" value="{{ restaurant.logo }}" class="form-control {{#if restaurant.logo}}is-invalid{{/if}}"
             placeholder="Enter your logo url..." />
           {{#if errors.logo }}<div class="invalid-feedback">{{ errors.logo }}</div>{{/if}}
 

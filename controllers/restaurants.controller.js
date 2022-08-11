@@ -43,3 +43,20 @@ module.exports.delete = (req, res, next) => {
     .then(() => res.redirect("/restaurants"))
     .catch((error) => next(error));
 };
+
+
+
+
+module.exports.edit = (req, res, next) => {
+    Restaurant.findById(req.params.id)
+    .then((restaurant) => res.render("restaurants/edit", { restaurant, categoriesRestaurant }))
+    .catch((error) => next(error));
+};
+
+
+module.exports.update = (req, res, next) => {
+    console.log(req.body)
+    Restaurant.findByIdAndUpdate(req.params.id, req.body).then((restaurant) => { 
+        res.redirect("/restaurants");
+    });
+}
