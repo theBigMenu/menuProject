@@ -49,8 +49,14 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.edit = (req, res, next) => {
     Restaurant.findById(req.params.id)
-    .then((restaurant) => res.render("restaurants/edit", { restaurant, categoriesRestaurant }))
-    .catch((error) => next(error));
+        .then((restaurant) => {
+            console.log(restaurant.user[0] === req.user.id,restaurant.user[0], req.user.id)
+            if(restaurant.user[0] === req.user.id)
+                res.render("restaurants/edit", { restaurant, categoriesRestaurant })
+            else 
+                res.redirect("/");
+        })
+        .catch((error) => next(error));
 };
 
 

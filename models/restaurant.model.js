@@ -63,7 +63,7 @@ const restaurantSchema = new Schema ({
             type: String,
             maxLength: [100, "Description needs at max 100 chars"],
         },
-        user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        user: { type: Schema.Types.ObjectId, ref: 'User' },
         menu: [{ type: Schema.Types.ObjectId, ref: 'Menu' }],
 })
 
