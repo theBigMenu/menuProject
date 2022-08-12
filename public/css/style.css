@@ -317,6 +317,9 @@ label{
 
 .img-circle{
 	clip-path: circle();
+  width: 300px ;
+  max-width: 300px;
+  max-height: 150px;
 }
 
 .menu-logo{
@@ -441,4 +444,9 @@ span label{
 
 p.back {
   color: #008c93 !important;
+}
+
+.background-logo-size{
+  width: 700px;
+  background-color: red;
 }
