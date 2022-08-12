@@ -49,7 +49,10 @@ const menuSchema = new Schema ({
             type: Schema.Types.ObjectId,
             ref: 'Restaurant'
         },
-        product: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+        product: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Category'
+        }],
 },
 {timestamps: true}
 )

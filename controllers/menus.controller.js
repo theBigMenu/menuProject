@@ -1,6 +1,6 @@
 
 const mongoose = require("mongoose");
-const { Menu } = require("../models");
+const { Menu, Restaurant } = require("../models");
 
 module.exports.list = (req, res, next) => {
   Menu.find()
@@ -21,12 +21,20 @@ module.exports.new = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
+  
   const menu = {
     ...req.body,
+    restaurant: req.params.id
   };
 
   Menu.create(menu)
-    .then((menu) => res.redirect("/menus"))
+    .then((menu) => {
+      Restaurant.findById(req.params.id).then((restaurant) => {
+        restaurant.menu.push(menu.id)
+        restaurant.save();
+      })
+      res.redirect("/menus")
+    })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
         console.error(error);
@@ -35,6 +43,8 @@ module.exports.create = (req, res, next) => {
         next(error);
       }
     });
+
+
 };
 
 module.exports.delete = (req, res, next) => {

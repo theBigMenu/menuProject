@@ -1,10 +1,10 @@
 
 const mongoose = require("mongoose");
-const { Restaurant } = require("../models");
+const { Restaurant, User } = require("../models");
 const categoriesRestaurant = require('../data/categories.restaurants.json')
 
 module.exports.list = (req, res, next) => {
-    Restaurant.find()
+    Restaurant.find({user:req.user.id})
     .then(restaurants => {
         res.render('restaurants/list', { restaurants })
     })
@@ -13,7 +13,12 @@ module.exports.list = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
     Restaurant.findById(req.params.id)
-    .then((restaurant) => res.render("restaurants/detail", { restaurant }))
+    .populate('menu')
+    .then((restaurant) => {
+        console.log(restaurant)
+        res.render("restaurants/detail", { restaurant })
+    }
+        )
     .catch((error) => next(error));
 };
 
@@ -24,10 +29,18 @@ module.exports.new = (req, res, next) => {
 module.exports.create = (req, res, next) => {
     const restaurant = {
         ...req.body,
+        user:req.user.id
     };
 
 Restaurant.create(restaurant)
-    .then((restaurant) => res.redirect("/restaurants"))
+
+    .then((restaurant) =>{
+        User.findById(req.params.id).then((user) => {
+            user.restaurant.push(restaurant.id)
+            user.save();
+        })
+        res.redirect("/restaurants")
+    })
     .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
             console.error(error);
@@ -49,9 +62,9 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.edit = (req, res, next) => {
     Restaurant.findById(req.params.id)
-        .then((restaurant) => {
-            console.log(restaurant.user[0] === req.user.id,restaurant.user[0], req.user.id)
-            if(restaurant.user[0] === req.user.id)
+        .then((restaurant) => { 
+            console.log(restaurant.user === req.user.id,restaurant.user, req.user.id)
+            if(restaurant.user.toString() === req.user.id)
                 res.render("restaurants/edit", { restaurant, categoriesRestaurant })
             else 
                 res.redirect("/");

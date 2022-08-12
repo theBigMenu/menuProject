@@ -18,7 +18,7 @@ router.post('/restaurants/:id/edit',secure.isAuthenticated, restaurants.update);
 
 
 router.get("/menus", secure.isAuthenticated, menus.list);
-router.post("/menus", secure.isAuthenticated, menus.create);
+router.post("/menus/:id/create", secure.isAuthenticated, menus.create);
 router.get("/menus/new", secure.isAuthenticated, menus.new);
 router.get("/menus/:id", secure.isAuthenticated, menus.detail);
 router.post("/menus/:id/delete", secure.isAuthenticated, menus.delete);

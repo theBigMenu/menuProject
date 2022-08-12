@@ -56,7 +56,7 @@ module.exports.doLogin = (req, res, next) => {
         return user.checkPassword(password).then((match) => {
           if (match) {
             req.session.userId = user.id;
-            res.redirect("/menus");
+            res.redirect("/restaurants");
           } else {
             renderInvalidLogin();
           }
