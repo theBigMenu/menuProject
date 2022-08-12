@@ -68,9 +68,6 @@ body {
   } 
 
 
-p{
-  color: white
-}
 
 .glassmorphism {
   background: rgba( 255, 255, 255, 0.2 );
@@ -389,6 +386,7 @@ span label{
   width: 400px;
   color: black;
   border: 0px;
+  max-width: 400px;
 }
 
 .accordion-button:active, .accordion-button:focus {
@@ -406,20 +404,19 @@ span label{
 .accordion-body{
   background-color: rgba( 255, 255, 255, 0.2 ) !important;
   width: 400px;
+  max-width: 400px;
 }
 
 .side-restauranta-info{
   width: 400px;
   height: 100%;
+  max-width: 400px;
 }
 
 
 .no-border{
   border: 0px;
 }
-
-
-
 
 
 .accordion-button.collapsed::after {
@@ -429,4 +426,19 @@ span label{
 .accordion-button:not(.collapsed)::after {
   color: yellow;
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Chevron_up_font_awesome.svg/512px-Chevron_up_font_awesome.svg.png");
+}
+
+
+.full-heigth{
+  min-height: 100vh;
+}
+
+.margin-details{
+  margin-left: 420px;
+  margin-right: 0px;
+}
+
+
+p.back {
+  color: #008c93 !important;
 }

@@ -13,6 +13,10 @@ router.post("/restaurants", secure.isAuthenticated, restaurants.create);
 router.get("/restaurants/:id", secure.isAuthenticated, restaurants.detail);
 router.post("/restaurants/:id/delete", secure.isAuthenticated, restaurants.delete);
 
+router.get('/restaurants/:id/edit',secure.isAuthenticated, restaurants.edit);
+router.post('/restaurants/:id/edit',secure.isAuthenticated, restaurants.update);
+
+
 router.get("/menus", secure.isAuthenticated, menus.list);
 router.post("/menus", secure.isAuthenticated, menus.create);
 router.get("/menus/new", secure.isAuthenticated, menus.new);
