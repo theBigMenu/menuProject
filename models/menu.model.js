@@ -40,8 +40,19 @@ const menuSchema = new Schema ({
         description:{
             type: String,
             maxLength: [150, "Title needs at least 150 chars"],
-        }
-})
+        },
+        active: {
+            type: Boolean,
+            default: false,
+        },
+        restaurant: {
+            type: Schema.Types.ObjectId,
+            ref: 'Restaurant'
+        },
+        product: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
+},
+{timestamps: true}
+)
 
 menuSchema.pre("validate", function (next) {
     this.image = this.image || undefined;

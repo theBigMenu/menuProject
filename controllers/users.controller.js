@@ -2,7 +2,7 @@ const { User, Menu, Product } = require("../models");
 
 module.exports.detail = (req, res, next) => {
   User.findById(req.params.id)
-    .populate("menus")
+    .populate("restaurant")
     .then((user) => {
       if (user) {
         res.render("users/detail", { user });

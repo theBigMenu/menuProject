@@ -30,6 +30,22 @@ const restaurantSchema = new Schema ({
                 message: (image) => `Invalid URL`,
                 },
         },
+        /*schedule: [{
+            "schedule_begin": {
+                type: Date,
+                required: true,
+            },
+            "schedule_end":{
+                type: Date,
+                required: true,
+            },
+            "schedule_days_runs": {
+                type: Number,
+                min: 0,
+                max: 6,
+                required: true,
+            },
+        }],*/
         phoneNumber: {
             type: Number,
             required: true,
@@ -47,6 +63,8 @@ const restaurantSchema = new Schema ({
             type: String,
             maxLength: [100, "Description needs at max 100 chars"],
         },
+        user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        menu: [{ type: Schema.Types.ObjectId, ref: 'Menu' }],
 })
 
 restaurantSchema.pre("validate", function (next) {

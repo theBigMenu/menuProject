@@ -14,3 +14,10 @@ module.exports.isAuthenticated = (req, res, next) => {
     }
   };
   
+  module.isAuthenticated = (req, res, next) => {
+    if (req.user.id === this.user) {
+        next();
+    } else {
+        res.redirect("/");
+    }
+};
