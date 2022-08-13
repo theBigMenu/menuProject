@@ -58,7 +58,8 @@ const menuSchema = new Schema ({
 )
 
 menuSchema.pre("validate", function (next) {
-    this.image = this.image || undefined;
+    this.logo = this.logo || undefined;
+    this.background = this.background || undefined;
     this.description = this.description || undefined;
     next();
 });

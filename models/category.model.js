@@ -20,10 +20,26 @@ const categorySchema = new Schema ({
             type: Schema.Types.ObjectId,
             ref: 'Menu'
         },
+        image: {
+            type: String,
+            default: "https://loremflickr.com/320/240/brazil",
+            validate: {
+                validator: function (image) {
+                try {
+                    new URL(image);
+                    return true;
+                    } catch (error) {
+                    return false;
+                    }
+                },
+                message: (image) => `Invalid URL`,
+                },
+            },
 }
 )
 
 categorySchema.pre("validate", function (next) {
+    this.image = this.image || undefined;
     this.description = this.description || undefined;
     next();
 });

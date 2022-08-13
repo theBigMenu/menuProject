@@ -17,6 +17,13 @@
           <input id="name" type="text" name="name" value="{{ category.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter the category name..." />
           {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
 
+          <label for="image">Image</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
+            <input id="image" type="text" name="image" value="{{ menu.image }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+              placeholder="Enter your image url..." />
+            {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+          </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text d-flex justify-content-center align-items-center">
