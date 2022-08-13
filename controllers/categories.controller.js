@@ -4,7 +4,11 @@ const { Menu, Category } = require("../models");
 
 
 module.exports.new = (req, res, next) => {
-    res.render("categories/new");
+    const category = {
+        menu: req.params.id
+    };
+    
+    res.render("categories/new", {category});
 };
 
 
