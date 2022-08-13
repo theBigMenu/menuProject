@@ -1,48 +1,49 @@
-<div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-12 d-flex justify-content-center align-items-center"> 
-      <h1 class="mb-4 create-menu">Create a New Menu</h1>
-    </div> 
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
-      <form action="/menus/{{menu.restaurant}}/create" method="POST" class="col-10">
-      
-        <label for="name">Name</label>
-        <div class="input-group mb-3 ">
-          <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
-          <input id="name" type="text" name="name" value="{{ menu.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter menu name..." />
-          {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
-        </div>
-
-        <label for="description">Description</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="fa fa-edit fa-fw"></i></span>
-          <textarea id="description" placeholder="Describe your menu here..." class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ menu.description}}</textarea>
-          {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
-        </div>
-
-        <label for="logo">Logo</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
-          <input id="logo" type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
-            placeholder="Enter your logo url..." />
-          {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
-        </div>
-
-        <label for="background">Background</label>
-        <div class="input-group mb-4">
-            <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
-            <input id="background" type="text" name="background" value="{{ menu.background }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
-              placeholder="Enter menu background url..." />
-            {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
-        </div>
+<div class="d-flex justify-content-center align-items-center full-heigth">
+  <div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 d-flex justify-content-center align-items-center"> 
+        <h1 class="mb-4 create-menu">Create a New Menu</h1>
+      </div> 
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
+        <form action="/menus/{{menu.restaurant}}/create" method="POST" class="col-10">
         
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-primary btn-primary">Submit</button>
-        </div>
-      </form>
+          <label for="name">Name</label>
+          <div class="input-group mb-3 ">
+            <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+            <input id="name" type="text" name="name" value="{{ menu.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter menu name..." />
+            {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
+          </div>
+
+          <label for="description">Description</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-edit fa-fw"></i></span>
+            <textarea id="description" placeholder="Describe your menu here..." class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ menu.description}}</textarea>
+            {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
+          </div>
+
+          <label for="logo">Logo</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
+            <input id="logo" type="text" name="logo" value="{{ menu.logo }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+              placeholder="Enter your logo url..." />
+            {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+          </div>
+
+          <label for="background">Background</label>
+          <div class="input-group mb-4">
+              <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
+              <input id="background" type="text" name="background" value="{{ menu.background }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
+                placeholder="Enter menu background url..." />
+              {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
+          </div>
+          
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
