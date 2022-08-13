@@ -26,6 +26,12 @@ body {
   background: #02c1cb;
 }
 
+.fixed{
+  position: fixed;
+  top: 0;
+  left:0
+}
+
 /* .bg {
     width: 100%;
     height: 100vh;
@@ -46,7 +52,6 @@ body {
   .bg {
     width: 100%;
     height: 100vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     background-size: 300% 300%;
@@ -323,14 +328,19 @@ label{
 }
 
 .menu-logo{
-  max-width: 90%; 
+  min-width: 45%;
+  max-width: 85%; 
 }
 
+.restaurant-logo{
+  min-width: 45%;
+  max-width: 70%;
+  clip-path: circle();
+}
 
 span label{
   margin: 0 0 0 4 !important;
   font-size: 12px !important;
-  
 }
 
 .container-new-restaurant{
@@ -366,7 +376,17 @@ span label{
   clip-path: circle();
   width: 170px;
   height: 170px;
+  max-width: 25vw;
 }
+
+.logo-restaurant-background-circle{
+  background-color: white ;
+  clip-path: circle();
+  width: 120px;
+  height: 120px;
+  max-width: 25vw;
+}
+
 
 .accordion-item:first-of-type, .accordion-item:last-of-type  {
   border-radius: 0;
@@ -448,5 +468,44 @@ p.back {
 
 .background-logo-size{
   width: 700px;
-  background-color: red;
 }
+
+
+.zoom{
+  background-color: red;
+  height: 50vh;
+  max-height: 80vh;
+  background-size: 100% 100%;
+  background-position: top center;
+  overflow: hidden;
+  top:0;  
+  left:0;
+  place-items:center;
+  width: 100vw;
+}
+
+
+.green{
+  background-color: green;
+}
+
+.side-left-menu{
+margin-top: 0px;
+}
+
+.main-body{
+  min-height: 80vh;
+}
+
+/* Sidebar */
+
+
+
+/* Inicio del Header de las categorias */
+
+.card-size{
+  min-width: 100%;
+  min-height: 310px;
+}
+
+

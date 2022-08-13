@@ -1,0 +1,26 @@
+<div class="container glassmorphism-no-hover pt-5 pb-5 mt-5">
+
+
+    <div class="row justify-content-center align-items-center">
+        {{#each categories as |category|}}
+
+            <div class="col-3 d-flex justify-content-center align-items-center text-center mb-4">
+                <div class="card  pt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{category.name}}</h5>
+                        <p class="card-text">{{category.description}}</p>
+                            <a href="categories/{{category.id}}" class="btn btn-primary">See details</a>
+                    </div>
+                </div> 
+            </div>
+        {{/each}}
+        <hr class="mt-5"/>    
+    </div>
+
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-center align-items-center text-center">
+            <h2><a href="/categories/new" class="btn btn-primary">Create a New Category</a></h2> 
+        </div>
+    </div>
+
+</div>

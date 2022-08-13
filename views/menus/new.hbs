@@ -7,12 +7,12 @@
   <div class="row justify-content-center">
     <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
       <form action="/menus/{{menu.restaurant}}/create" method="POST" class="col-10">
-
-        <label for="title">Title</label>
+      
+        <label for="name">Name</label>
         <div class="input-group mb-3 ">
           <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
-          <input id="title" type="text" name="title" value="{{ menu.title }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter menu title..." />
-          {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
+          <input id="name" type="text" name="name" value="{{ menu.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter menu name..." />
+          {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
         </div>
 
         <label for="description">Description</label>

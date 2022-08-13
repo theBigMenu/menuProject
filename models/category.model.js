@@ -2,17 +2,24 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema ({
-        title: {
+        name: {
             type: String,
-            required: "Title is required",
-            maxLength: [60, "Title needs max 60 chars"],
+            required: "Name is required",
+            maxLength: [60, "Name needs max 60 chars"],
         },
 
         description:{
             type: String,
-            maxLength: [150, "Title needs max 150 chars"],
+            maxLength: [150, "Description needs max 150 chars"],
         },
-        product: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+        product: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Product'
+        }],
+        menu: {
+            type: Schema.Types.ObjectId,
+            ref: 'Menu'
+        },
 }
 )
 

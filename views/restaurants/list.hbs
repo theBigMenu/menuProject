@@ -1,18 +1,17 @@
-<div class="container glassmorphism-no-hover pt-5 pb-5 mt-5">
+<div class="container glassmorphism-no-hover pt-5 pb-5 mt-5 col-12 ">
+    <div class="row justify-content-center align-items-center mt-3 text-center px-5">
 
-
-    <div class="row justify-content-center align-items-center">
+        <h1 class="mb-5">ALL MY RESTAURANTS</h1>
+        <hr>
         {{#each restaurants as |restaurant|}}
-
             <div class="col-3 d-flex justify-content-center align-items-center text-center mb-4">
-                <div class="card  pt-3">
-
+                <div class="card card-size pt-3">
                     <div class="row justify-content-center align-items-center text-center position-menu-logo">
-                        <div class="position-relative logo-background-circle  d-flex justify-content-center align-items-center text-center">
+                        <div class="position-relative logo-restaurant-background-circle  d-flex justify-content-center align-items-center text-center">
                         </div> 
 
                         <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                            <img src="{{restaurant.logo}}" class="card-img-top menu-logo" alt="...">
+                            <img src="{{restaurant.logo}}" class="card-img-top restaurant-logo" alt="...">
                         </div>
                     </div>
                     <div class="card-body">
@@ -32,4 +31,8 @@
         </div>
     </div>
 
+</div>
+
+<div class="m-5">
+    <br>
 </div>

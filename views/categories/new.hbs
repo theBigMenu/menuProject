@@ -1,0 +1,37 @@
+<div class="container glassmorphism container-new-restaurant pt-5 pb-5 mt-5">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-12 d-flex justify-content-center align-items-center"> 
+      <h1 class="mb-4 create-menu">Create a New Category</h1>
+    </div> 
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 d-flex justify-content-center align-items-center p-0"> 
+      <form action="/categories/{{category.menu}}/create" method="POST" class="col-10">
+
+        
+        <div class="input-group mb-3 ">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-tag fa-fw"></i>
+            <label for="name">Name</label>
+          </span>
+          <input id="name" type="text" name="name" value="{{ category.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter the category name..." />
+          {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
+
+
+        <div class="input-group mb-3">
+          <span class="input-group-text d-flex justify-content-center align-items-center">
+            <i class="fa fa-edit fa-fw"></i>
+            <label for="description">Description</label>
+          </span>
+          <textarea id="description" placeholder="Describe your menu here..." class="form-control {{#if errors.description }}is-invalid{{/if}}" name="description" aria-label="Menu description">{{ category.description}}</textarea>
+          {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

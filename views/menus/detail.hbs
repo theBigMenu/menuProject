@@ -1,11 +1,11 @@
-<h1>Menu</h1>
+    <div class="zoom col-12 d-flex justify-content-center align-items-center pt-5 text-center" style="background-image: url({{menu.background}}) ">
+                <div class="row justify-content-center">
+                    <div class="position-relative logo-background-circle d-flex justify-content-center align-items-center text-center">
+                    </div> 
+                    <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center ">
+                        <img src="{{menu.logo}}" class="card-img-top menu-logo" alt="...">
+                    </div>
+                </div>
+    </div>
 
-<p>{{menu.title}}</p>
-<img src="{{menu.logo}}" class="card-img-top" alt="...">
-<img src="{{menu.background}}" class="card-img-top" alt="...">
 
-<form action="/menus/{{menu.id}}/delete" method="post">
-    <button type="submit">Delete menu</button>
-</form>
-
-<a href="/menus">Go to list</a>

@@ -35,7 +35,7 @@ module.exports.create = (req, res, next) => {
 Restaurant.create(restaurant)
 
     .then((restaurant) =>{
-        User.findById(req.params.id).then((user) => {
+        User.findById(req.user.id).then((user) => {
             user.restaurant.push(restaurant.id)
             user.save();
         })

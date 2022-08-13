@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const menuSchema = new Schema ({
-        title: {
+        name: {
             type: String,
-            required: "Title is required",
-            maxLength: [60, "Title needs at least 60 chars"],
+            required: "Name is required",
+            maxLength: [60, "Name needs at least 60 chars"],
         },
         logo: {
             type: String,
@@ -49,7 +49,7 @@ const menuSchema = new Schema ({
             type: Schema.Types.ObjectId,
             ref: 'Restaurant'
         },
-        product: [{
+        categories: [{
             type: Schema.Types.ObjectId,
             ref: 'Category'
         }],
