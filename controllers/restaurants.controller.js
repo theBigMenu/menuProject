@@ -15,7 +15,6 @@ module.exports.detail = (req, res, next) => {
     Restaurant.findById(req.params.id)
     .populate('menu')
     .then((restaurant) => {
-        console.log(restaurant)
         res.render("restaurants/detail", { restaurant })
     }
         )
@@ -35,9 +34,16 @@ module.exports.create = (req, res, next) => {
 Restaurant.create(restaurant)
 
     .then((restaurant) =>{
-        User.findById(req.user.id).then((user) => {
-            user.restaurant.push(restaurant.id)
-            user.save();
+
+        User.findById(req.user.id)
+
+        .then((user) => {
+            if (user) {
+                console.log(user,restaurant.id)
+                user.restaurant.push(restaurant.id)
+                user.save();
+            }
+            else throw mongoose.Error.ValidationError
         })
         res.redirect("/restaurants")
     })
@@ -63,7 +69,6 @@ module.exports.delete = (req, res, next) => {
 module.exports.edit = (req, res, next) => {
     Restaurant.findById(req.params.id)
         .then((restaurant) => { 
-            console.log(restaurant.user === req.user.id,restaurant.user, req.user.id)
             if(restaurant.user.toString() === req.user.id)
                 res.render("restaurants/edit", { restaurant, categoriesRestaurant })
             else 
@@ -74,7 +79,6 @@ module.exports.edit = (req, res, next) => {
 
 
 module.exports.update = (req, res, next) => {
-    console.log(req.body)
     Restaurant.findByIdAndUpdate(req.params.id, req.body).then((restaurant) => { 
         res.redirect("/restaurants");
     });
