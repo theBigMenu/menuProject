@@ -39,7 +39,6 @@ Restaurant.create(restaurant)
 
         .then((user) => {
             if (user) {
-                console.log(user,restaurant.id)
                 user.restaurant.push(restaurant.id)
                 user.save();
             }
