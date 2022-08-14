@@ -3,22 +3,26 @@
 <div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around">
 
   <nav class="d-flex navbar col-10">
-    <a class="navbar-brand col-8" href="/">
-      <div>
-      <img src="\images\Logo_BigMenu.svg" width="90" height="90" alt="">
+      <div class="navbar-brand col-8">
+          <a  href="/">
+              <img src="\images\Logo_BigMenu.svg" width="90" height="90" alt="">
+          </a>
       </div>
-    </a>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <div class="d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-md-end col-2">
       {{#if currentUser}}
-          <p style="color:black;">Welcome Back {{currentUser.name}}</p>
+      <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo ">
+        <div class="col-12">
+          <p style="color:black; font-size:14px">Welcome Back {{currentUser.name}}</p>
+        </div>
+      </div>
 
-                    <div class="row justify-content-center align-items-center text-center position-menu-logo">
+                    <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo">
                         <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
                         </div> 
 
                         <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                            <img src="{{currentUser.image}}" class="card-img-top profile-logo" alt="...">
+                            <img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="...">
                         </div>
                     </div>
       {{else}}
