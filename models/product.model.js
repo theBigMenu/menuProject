@@ -5,7 +5,7 @@ const categoriesAllergens = require('../data/categories.allergens.json')
 const productSchema = new Schema ({
         name: {
             type: String,
-            required: "Title is required",
+            required: "Name is required",
             maxLength: [60, "Title needs at least 60 chars"],
         },
         image: {
@@ -28,14 +28,18 @@ const productSchema = new Schema ({
         },
         description:{
             type: String,
-            maxLength: [150, "Title needs at max 150 chars"],
+            maxLength: [150, "Description needs at max 150 chars"],
         },
         allergens:{
             type: [{
                 type: String,
                 enum: categoriesAllergens
             }]
-        }
+        },
+        categories: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Category'
+        }],
 })
 
 productSchema.pre("validate", function (next) {

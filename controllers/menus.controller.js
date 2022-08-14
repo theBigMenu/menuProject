@@ -12,6 +12,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
   Menu.findById(req.params.id)
+  .populate('categories')
   .then((menu) => res.render("menus/detail", { menu }))
   .catch((error) => next(error));
 };
