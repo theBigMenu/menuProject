@@ -27,7 +27,7 @@ body{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #02c1cb;
+  background: #03747a;
 }
 
 .fixed{
@@ -122,9 +122,9 @@ body{
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
-  background-color: #02c1cb;
+  background-color: #03747a;
   color:  rgb(255, 255, 255);
-  border: #02c1cb solid;
+  border: #03747a solid;
 }
 
 .btn-check:focus+.btn, .btn:focus{
@@ -346,6 +346,12 @@ label{
   clip-path: circle();
 }
 
+.profile-logo{
+  min-width: 45%;
+  max-width: 50px;
+  clip-path: circle();
+}
+
 span label{
   margin: 0 0 0 4 !important;
   font-size: 12px !important;
@@ -395,6 +401,13 @@ span label{
   max-width: 25vw;
 }
 
+.profile-picture{
+  background-color: white ;
+  clip-path: circle();
+  width: 50px;
+  height: 50px;
+  max-width: 10vw;
+}
 
 .accordion-item:first-of-type, .accordion-item:last-of-type  {
   border-radius: 0;
@@ -570,4 +583,12 @@ margin-top: 0px;
  
 .row{
   max-width: 100% !important;
+}
+
+.no-label{
+  width: fit-content;
+}
+
+.btn-secondary:hover{
+  background-color: #313638;
 }

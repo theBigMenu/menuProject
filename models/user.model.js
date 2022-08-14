@@ -37,6 +37,21 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Restaurant'
     }],
+  image: {
+    type: String,
+    default: "https://t4.ftcdn.net/jpg/03/31/69/91/360_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg",
+    validate: {
+        validator: function (image) {
+        try {
+            new URL(image);
+            return true;
+            } catch (error) {
+            return false;
+            }
+        },
+        message: (image) => `Invalid URL`,
+        },
+    },
 });
 
 userSchema.pre("save", function (next) {
@@ -51,6 +66,11 @@ userSchema.pre("save", function (next) {
   } else {
     next();
   }
+});
+
+userSchema.pre("validate", function (next) {
+  this.image = this.image || undefined;
+  next();
 });
 
 userSchema.methods.checkPassword = function (passwordToCheck) {

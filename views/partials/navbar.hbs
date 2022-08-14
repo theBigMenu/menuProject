@@ -2,18 +2,32 @@
 
 <div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around">
 
-
   <nav class="d-flex navbar col-10">
     <a class="navbar-brand col-8" href="/">
       <div>
       <img src="\images\Logo_BigMenu.svg" width="90" height="90" alt="">
       </div>
     </a>
-    <div class="d-flex col-2">
 
-      <a href="/login"><button class="btn btn-outline-light mx-1"> Login</button></a>
-      <a href="/register"><button class="btn btn-primary mx-1"> Sign Up</button></a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      {{#if currentUser}}
+          <p style="color:black;">Welcome Back {{currentUser.name}}</p>
+
+                    <div class="row justify-content-center align-items-center text-center position-menu-logo">
+                        <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
+                        </div> 
+
+                        <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
+                            <img src="{{currentUser.image}}" class="card-img-top profile-logo" alt="...">
+                        </div>
+                    </div>
+      {{else}}
+        <a href="/login"><button class="btn btn-primary mx-1"> Login</button></a>
+        <a href="/register"><button class="btn btn-secondary mx-1"> Sign Up</button></a>
+      {{/if}}
+
     </div>
+
     <div class="col-0 hamburger" id="hamburgerMenu"></div>
   </nav>
 </div>
