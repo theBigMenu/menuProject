@@ -7,7 +7,6 @@ module.exports.new = (req, res, next) => {
     const category = {
         menu: req.params.id
     };
-    console.log(category.menu)
     res.render("categories/new", {category});
 };
 
@@ -37,8 +36,6 @@ module.exports.create = (req, res, next) => {
         ...req.body,
         menu:req.params.id
     };
-
-    console.log(req.params.id)
 
 Category.create(category)
     .then((category) =>{

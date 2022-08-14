@@ -19,7 +19,6 @@ router.get("/categories", secure.isAuthenticated, categories.list);
 router.get("/categories/:id/new", secure.isAuthenticated, categories.new);
 router.post("/categories/:id/create", secure.isAuthenticated, categories.create);
 router.get("/categories/:id", secure.isAuthenticated, categories.detail);
-router.get("/categories/:id", secure.isAuthenticated, categories.new);
 // router.post("/categories/:id/delete", secure.isAuthenticated, categories.delete);
 // router.get('/categories/:id/edit',secure.isAuthenticated, categories.edit);
 // router.post('/categories/:id/edit',secure.isAuthenticated, categories.update);
