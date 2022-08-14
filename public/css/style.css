@@ -1,7 +1,11 @@
-body {
-  max-width: 100vw;
+html, body{
+  height: 100% !important;
 }
-
+body{
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -48,6 +52,7 @@ body {
     );  
     animation: AnimateBG 20s ease infinite;
   } */
+
   
   .bg {
     width: 100%;
@@ -113,6 +118,7 @@ body {
   border: #008c93 solid;
   background-color: #008c93;
   transition: all 0.5s ease-in-out;
+  overflow: hidden !important;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
@@ -457,6 +463,9 @@ span label{
 .full-heigth{
   min-height: 100vh;
 }
+.f-h{
+  min-height: 100%;
+}
 
 .margin-details{
   margin-left: 420px;
@@ -474,16 +483,15 @@ p.back {
 
 
 .zoom{
-  background-color: red;
   height: 50vh;
   max-height: 80vh;
-  background-size: 100% 100%;
+  background-size: 110%;
   background-position: top center;
   overflow: hidden;
   top:0;  
   left:0;
   place-items:center;
-  width: 100vw;
+  max-width: 100%;
 }
 
 
@@ -506,15 +514,60 @@ margin-top: 0px;
 /* Inicio del Header de las categorias */
 
 .card-size{
-  min-width: 100%;
+  min-width: 80%;
   min-height: 310px;
 }
-
+.control{
+  max-width: 90%;
+}
 
 .white{
   background-color:  white;
+  margin: 0;
+  padding: 0;
 }
 
 .text-black{
   color:  black;
+}
+
+
+/* Hero for products*/
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-size: 100%;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+ 
+.row{
+  max-width: 100% !important;
 }

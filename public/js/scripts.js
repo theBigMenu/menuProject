@@ -26,30 +26,19 @@ hambuerMenu.addEventListener('click', (e) => {
 // hero zoom animation 
 
 const zoomElement = document.querySelector(".zoom");
-let zoom = 100;
+let zoom = 110;
 const ZOOM_SPEED = 1;
 
 document.addEventListener("wheel", function(e) {  
-    if(e.deltaY > 0){    
-        zoomElement.style.backgroundSize = `${zoom += ZOOM_SPEED}% ${zoom += ZOOM_SPEED}%`; 
+    if(e.deltaY > 0 ){    
+        zoomElement.style.backgroundSize = `${zoom += ZOOM_SPEED}%`; 
 
     }else if (e.deltaY < 0 ) {    
-        zoomElement.style.backgroundSize = `${zoom -= ZOOM_SPEED}% ${zoom -= ZOOM_SPEED}%`;
-        if(zoom <100){
-            zoom=100
+        zoomElement.style.backgroundSize = `${zoom -= ZOOM_SPEED}%`;
+        if(zoom <110){
+            zoom=110
         }
     }
 });
 
-
-window.addEventListener('scroll',(e) => {
-    if(e.deltaY > 0){    
-        zoomElement.style.backgroundSize = `${zoom += ZOOM_SPEED}% ${zoom += ZOOM_SPEED}%`; 
-    }else if (e.deltaY < 0 ) {    
-        zoomElement.style.backgroundSize = `${zoom -= ZOOM_SPEED}% ${zoom -= ZOOM_SPEED}%`;
-        if(zoom <100){
-            zoom=100
-        }
-    }
-});
 
