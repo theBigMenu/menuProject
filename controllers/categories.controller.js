@@ -43,7 +43,7 @@ Category.create(category)
             menu.categories.push(category.id)
             menu.save();
         })
-        res.redirect("/categories")
+        res.redirect(`/menus/${category.menu}`)
     })
     .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
