@@ -1,39 +1,45 @@
-<div class="container glassmorphism-no-hover pt-5 pb-5 mt-5 col-12 ">
-    <div class="row justify-content-center align-items-center mt-3 text-center px-5">
+<div class="first-top-margin">
+</div>
+<div class="full-heigth  d-flex justify-content-center align-items-center text-center">
+    <div class="container glassmorphism-no-hover pt-5 pb-5 mt-5 col-12 ">
+        <div class="row justify-content-center align-items-center mt-3 text-center px-5">
 
-        <h1 class="mb-5">ALL MY RESTAURANTS</h1>
-        <hr>
-        {{#each restaurants as |restaurant|}}
-            <div class="col-3 d-flex justify-content-center align-items-center text-center mb-4">
-                <div class="card card-size pt-3">
-                    <div class="row justify-content-center align-items-center text-center position-menu-logo">
-                        <div class="position-relative logo-restaurant-background-circle  d-flex justify-content-center align-items-center text-center">
-                        </div> 
+            <h1 class="mb-5">ALL MY RESTAURANTS</h1>
+            <hr>
 
-                        <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                            <img src="{{restaurant.logo}}" class="card-img-top restaurant-logo" alt="...">
+
+            <div class="row col-12  d-flex justify-content-center align-items-center text-center">
+            {{#each restaurants as |restaurant|}}
+                <div class="col-5 d-flex justify-content-center align-items-center text-center mb-4 card card-body mx-2 h-100">
+                    <div class="row col-12 justify-content-center align-items-center text-center">
+                        <div class="col-3 d-flex justify-content-center align-items-center text-center">
+
+                                <img src="{{restaurant.logo}}" class="card-img-top restaurant-logo" alt="...">
+                        </div>
+                        <div class="col-9 d-flex justify-content-center align-items-center text-center box">
+                            <div class="row col-12 justify-content-center align-items-center py-5 f-h">
+                                <h5 class="card-title">{{restaurant.name}}</h5>
+                                <p class="card-text">{{restaurant.description}}</p>
+                                    <a href="restaurants/{{restaurant.id}}" class="btn btn-primary">See details</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{restaurant.name}}</h5>
-                        <p class="card-text">{{restaurant.description}}</p>
-                            <a href="restaurants/{{restaurant.id}}" class="btn btn-primary">See details</a>
-                    </div>
-                </div> 
+                </div>
+            {{/each}}
             </div>
-        {{/each}}
-        <hr class="mt-5"/>    
-    </div>
-
-    <div class="row ">
-        <div class="col-12 d-flex justify-content-center align-items-center text-center">
-            <h2><a href="/restaurants/new" class="btn btn-primary">Create a New Restaurant</a></h2>
-            
+            <hr class="mt-5"/>    
         </div>
+
+        <div class="row ">
+            <div class="col-12 d-flex justify-content-center align-items-center text-center">
+                <h2><a href="/restaurants/new" class="btn btn-primary">Create a New Restaurant</a></h2>
+                
+            </div>
+        </div>
+
     </div>
 
-</div>
-
-<div class="m-5">
-    <br>
+    <div class="m-5">
+        <br>
+    </div>
 </div>

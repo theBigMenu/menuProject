@@ -336,14 +336,17 @@ label{
 }
 
 .menu-logo{
-  min-width: 45%;
-  max-width: 85%; 
+  min-width: 100%;
+  max-width: 100%;
+  clip-path: circle();
+  background-color: white;
 }
 
 .restaurant-logo{
-  min-width: 45%;
-  max-width: 70%;
+  min-width: 100%;
+  max-width: 100%;
   clip-path: circle();
+  background-color: white;
 }
 
 .profile-logo{
@@ -598,4 +601,22 @@ margin-top: 0px;
 
 .btn-secondary:hover{
   background-color: #313638;
+}
+
+.box{
+  min-height: fit-content;
+}
+
+.row-fit-content{
+min-height: fit-content;
+}
+
+
+.first-top-margin{
+  height: 100px;
+}
+
+.tiny-text{
+  font-size: 10px;
+  margin-top: -13px;
 }

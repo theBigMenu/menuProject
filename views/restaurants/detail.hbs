@@ -5,12 +5,9 @@
                     <a href="/restaurants" class=" px-5 py-2"> <p class="back"> <i class="fa fa-arrow-left" aria-hidden="true"></i> <strong>Go Back</strong> </p> </a>
                 </div>
             </div>
-
-            <div class="row justify-content-center">
-                <div class="position-relative logo-background-circle d-flex justify-content-center align-items-center text-center">
-                </div> 
-                <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                    <img src="{{restaurant.logo}}" class="card-img-top menu-logo" alt="...">
+            <div class="row col-12 justify-content-center align-items-center text-center">
+                <div class="col-5 d-flex justify-content-center align-items-center text-center">
+                        <img src="{{restaurant.logo}}" class="card-img-top menu-logo" alt="...">
                 </div>
             </div>
 
@@ -69,12 +66,13 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row mt-4">
-                    <div class="col-6 d-flex justify-content-center align-items-center text-center">
-                        <a href="/restaurants/{{restaurant.id}}/edit">  <button type="submit" class="btn btn-primary"> Edit </button> </a>
+                <div class="d-grid gap-3 d-md-flex justify-content-md-end col-12">
+                    <div class="col-6 d-flex justify-content-center align-items-center text-center mt-5">
+                        <form action="/restaurants/{{restaurant.id}}/edit" method="get">
+                            <button type="submit" class="btn btn-primary"> Edit  </button>
+                        </form>
                     </div>
-                    <div class="col-6 d-flex justify-content-center align-items-center text-center mt-3">
+                    <div class="col-6 d-flex justify-content-center align-items-center text-center mt-5">
                         <form action="/restaurants/{{restaurant.id}}/delete" method="post">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
@@ -112,6 +110,23 @@
                                     <p class="card-text">{{menu.description}}</p>
                                         <a href="/menus/{{menu.id}}" class="btn btn-primary">See details</a>
                                 </div>
+
+
+                                    <hr class="mt-2"/>
+
+                                <div class="d-grid gap-1 d-md-flex justify-content-md-end col-12">
+                                    <div class="col-6 d-flex justify-content-center align-items-center text-center ">
+                                        <form action="/menus/{{menu.id}}/edit" method="get">
+                                            <button type="submit" class="btn btn-primary"> Edit  </button>
+                                        </form>
+                                    </div>
+                                    <div class="col-6 d-flex justify-content-center align-items-center text-center">
+                                        <form action="/menus/{{menu.id}}/delete" method="post">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>            
+                                </div>
+
                             </div>
                         </div>
                     {{/each}}

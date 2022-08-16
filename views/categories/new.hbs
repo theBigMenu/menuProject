@@ -9,7 +9,7 @@
       <form action="/categories/{{category.menu}}/create" method="POST" class="col-10">
 
         <div class="input-group mb-3 ">
-          <span class="input-group-text d-flex justify-content-center align-items-center">
+          <span class="no-label input-group-text d-flex justify-content-center align-items-center">
             <i class="fa fa-tag fa-fw"></i>
             <label for="name">Name</label>
           </span>
@@ -18,14 +18,14 @@
 
           <label for="image">Image</label>
           <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
+            <span class="no-label input-group-text"><i class="fa fa-picture-o fa-fw"></i></span>
             <input id="image" type="text" name="image" value="{{ menu.image }}" class="form-control {{#if errors.image }}is-invalid{{/if}}"
               placeholder="Enter your image url..." />
             {{#if errors.image }}<div class="invalid-feedback">{{ errors.image }}</div>{{/if}}
           </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text d-flex justify-content-center align-items-center">
+          <span class="no-label input-group-text d-flex justify-content-center align-items-center">
             <i class="fa fa-edit fa-fw"></i>
             <label for="description">Description</label>
           </span>
