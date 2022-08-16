@@ -11,10 +11,6 @@ const categorySchema = new Schema ({
         type: String,
         maxLength: [150, "Description needs max 150 chars"],
     },
-    grupo: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Grupo'
-    }],
     menu: {
         type: Schema.Types.ObjectId,
         ref: 'Menu'

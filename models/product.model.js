@@ -36,10 +36,10 @@ const productSchema = new Schema ({
                 enum: categoriesAllergens
             }]
         },
-        categories: [{
+        categories: {
             type: Schema.Types.ObjectId,
             ref: 'Category'
-        }],
+        },
 })
 
 productSchema.pre("validate", function (next) {

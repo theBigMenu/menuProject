@@ -14,7 +14,7 @@
 
             <h1 class="mb-5 text-black">{{categories.name}}</h1>
             <hr class="black">
-            {{#each menu.categories as |category|}}
+            {{#each categories.products as |product|}}
                 <div class="col-3 d-flex justify-content-center align-items-center text-center mb-4">
                     <div class="card card-size pt-3">
                         <div class="row justify-content-center align-items-center text-center position-menu-logo">
@@ -22,13 +22,13 @@
                             </div> 
 
                             <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                                <img src="{{category.logo}}" class="card-img-top restaurant-logo" alt="...">
+                                <img src="{{product.image}}" class="card-img-top restaurant-logo" alt="...">
                             </div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title text-black">{{category.name}}</h5>
-                            <p class="card-text text-black">{{category.description}}</p>
-                                <a href="/categories/{{category.id}}" class="btn btn-primary">See details</a>
+                            <h5 class="card-title text-black">{{product.name}}</h5>
+                            <p class="card-text text-black">{{product.description}}</p>
+                                <a href="/products/{{product.id}}" class="btn btn-primary">See details</a>
                         </div>
                     </div> 
                 </div>
@@ -38,7 +38,7 @@
 
                 <div class="row ">
                     <div class="col-12 d-flex justify-content-center align-items-center text-center">
-                        <form action="/products/{{category.id}}/new" method="GET">
+                        <form action="/products/{{categories.id}}/new" method="GET">
                             <button type="submit"  class="btn btn-primary">Create a New Product</button>
                         </form>
                         </div>

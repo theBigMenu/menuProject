@@ -13,7 +13,7 @@ module.exports.list = (req, res, next) => {
   module.exports.detail = (req, res, next) => {
     Category.findById(req.params.id)
     .populate('products')
-    .then((category) => res.render("categories/detail", { category }))
+    .then((categories) => res.render("categories/detail", { categories }))
     .catch((error) => next(error));
   };
 

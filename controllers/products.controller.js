@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Category, Product } = require("../models");
+const { Category, Product, Menu } = require("../models");
 
 
 module.exports.list = (req, res, next) => {
@@ -17,29 +17,34 @@ module.exports.detail = (req, res, next) => {
 };
 
 module.exports.new = (req, res, next) => {
-  const product = {
+
+  Category.find()
+  .then(categories=>{
+    const product = {
       category: req.params.id
   };
-  res.render("products/new", {product});
+   res.render(('products/new'), {categories, product}) 
+   })
+   .catch(next) 
 };
 
 
 
 module.exports.create = (req, res, next) => {
 
-  const product = {
+  const producto = {
     ...req.body,
     category:req.params.id
 };
 
-Product.create(product)
+Product.create(producto)
 .then((product) =>{
     Category.findById(req.params.id)
     .then((category) => {
         category.products.push(product.id)
         category.save();
     })
-    res.redirect(`/categories/${product.category}`)
+    res.redirect(`/categories/${producto.category}`)
 })
 .catch((error) => {
     if (error instanceof mongoose.Error.ValidationError) {
@@ -58,8 +63,4 @@ module.exports.delete = (req, res, next) => {
 };
 
 
- //Category.find()
-  // .then(categories=>{
-  //  res.render('products/new'), {categories}) 
-  // })
-  // .catch(next) t cambiar el create de abajo a un do create
+ 
