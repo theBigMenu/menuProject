@@ -4,5 +4,4 @@ module.exports = {
     User: require('./user.model'),
     Restaurant: require('./restaurant.model'),
     Category: require('./category.model'),
-    Grupo: require('./grupo.model')
   }

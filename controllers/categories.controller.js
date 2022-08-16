@@ -2,33 +2,28 @@ const mongoose = require("mongoose");
 const { Menu, Category } = require("../models");
 
 
-
-module.exports.new = (req, res, next) => {
-    const category = {
-        menu: req.params.id
-    };
-    res.render("categories/new", {category});
-};
-
-
 module.exports.list = (req, res, next) => {
-    Category.find({user:req.user.id})
-    .then(categories => {
+    Category.find()
+      .then(categories => {
         res.render('categories/list', { categories })
-    })
-    .catch(next)
-}
+      })
+      .catch(next)
+  }
 
-module.exports.detail = (req, res, next) => {
+  module.exports.detail = (req, res, next) => {
     Category.findById(req.params.id)
-    .populate('menu')
-    .then((categories) => {
-        res.render("categories/detail", { categories })
-    }
-        )
+    .populate('products')
+    .then((category) => res.render("categories/detail", { category }))
     .catch((error) => next(error));
-};
+  };
 
+  module.exports.new = (req, res, next) => {
+    const category = {
+      menu: req.params.id
+    };
+  
+    res.render("categories/new", {category});
+  };
 
 module.exports.create = (req, res, next) => {
 
@@ -39,11 +34,12 @@ module.exports.create = (req, res, next) => {
 
 Category.create(category)
     .then((category) =>{
-        Menu.findById(req.params.id).then((menu) => {
+        Menu.findById(req.params.id)
+        .then((menu) => {
             menu.categories.push(category.id)
             menu.save();
         })
-        res.redirect("/categories")
+        res.redirect(`/menus/${category.menu}`)
     })
     .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {

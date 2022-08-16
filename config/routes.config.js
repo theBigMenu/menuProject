@@ -40,17 +40,13 @@ router.get("/products/:id", secure.isAuthenticated, products.detail);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
 // router.post('/products/:id/edit',secure.isAuthenticated, products.update);
 
-router.get("/grupo", secure.isAuthenticated, grupo.list);
-router.get("/grupo/:id/new", secure.isAuthenticated, menus.new);
-router.post("/grupo/:id/create", secure.isAuthenticated, menus.create);
-router.post("/grupo/:id/delete", secure.isAuthenticated, menus.delete);
-
 
 router.get("/register", auth.register);
 router.post("/register", auth.doRegister);
 
 router.get("/login", auth.login);
 router.post("/login", auth.doLogin);
+router.get("/logout", auth.logout)
 
 router.get("/users/:id", secure.isAuthenticated, users.detail);
 router.get("/users/:id/confirm", users.confirm);

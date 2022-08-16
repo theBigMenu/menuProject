@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center full-heigth">
     <h2 class="mb-2">Create new Product</h2>
-    <form action="/products" method="POST">
+    <form action="/products/{{product.category}}/create" method="POST">
 
       <div class="input-group mb-1">
         <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
@@ -27,6 +27,22 @@
         {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
       </div>
 
+
+
+
+
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+
+   {{!--  <div>
+      <select name="Category">
+        {{#each categories as |category|}}
+        <option value = "{{category.id}}">
+          {{category.name}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+   --}}

@@ -11,11 +11,13 @@
 
     <div class="d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-md-end col-2">
       {{#if currentUser}}
+      <a href="/logout"><button class="btn btn-primary mx-1"> Logout</button></a>   
       <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo ">
         <div class="col-12">
           <p style="color:black; font-size:14px">Welcome Back {{currentUser.name}}</p>
         </div>
       </div>
+      
 
                     <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo">
                         <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
@@ -25,12 +27,14 @@
                             <img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="...">
                         </div>
                     </div>
+                 
       {{else}}
         <a href="/login"><button class="btn btn-primary mx-1"> Login</button></a>
         <a href="/register"><button class="btn btn-secondary mx-1"> Sign Up</button></a>
       {{/if}}
 
     </div>
+    
 
     <div class="col-0 hamburger" id="hamburgerMenu"></div>
   </nav>

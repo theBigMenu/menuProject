@@ -6,6 +6,5 @@ module.exports = {
   users: require("./users.controller"),
   restaurants: require("./restaurants.controller"),
   categories: require("./categories.controller"),
-  grupo: require("./grupo.controller"),
 };
 

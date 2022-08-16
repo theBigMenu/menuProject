@@ -65,3 +65,8 @@ module.exports.doLogin = (req, res, next) => {
     })
     .catch((error) => next(error));
 };
+
+module.exports.logout = (req, res, next) => {
+  res.setHeader(`Clear-Site-Data`, `"cache", "cookies"`);
+    return res.redirect('/');
+}
