@@ -9,10 +9,13 @@
             <h1 class="mb-5">ALL MY RESTAURANTS</h1>
             <hr>
 
-
-            <div class="row col-12  d-flex justify-content-center align-items-center text-center">
+            <div class="row col-12  d-flex justify-content-center align-items-center text-center parent">
             {{#each restaurants as |restaurant|}}
                 <div class="col-5 d-flex justify-content-center align-items-center text-center mb-4 card card-body mx-2 h-100">
+                    <form action="/restaurants/{{restaurant.id}}/delete" class="m-0 p-0" method="post">
+                        <button type="submit" class="close"><strong>X</strong></button>
+                    </form>
+
                     <div class="row col-12 justify-content-center align-items-center text-center">
                         <div class="col-3 d-flex justify-content-center align-items-center text-center">
 
@@ -26,6 +29,7 @@
                             </div>
                         </div>
                     </div>
+                    <a href="/restaurants/{{restaurant.id}}/edit"><i class="fa fa-pencil edit" aria-hidden="true"></i></a>
                 </div>
             {{/each}}
             </div>
