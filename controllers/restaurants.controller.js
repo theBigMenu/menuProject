@@ -58,7 +58,7 @@ Restaurant.create(restaurant)
 
 module.exports.delete = (req, res, next) => {
     Restaurant.findByIdAndDelete(req.params.id)
-    .then(() => res.redirect("/restaurants"))
+    .then(() => res.redirect("back"))
     .catch((error) => next(error));
 };
 

@@ -58,7 +58,7 @@ Product.create(producto)
 
 module.exports.delete = (req, res, next) => {
     Product.findByIdAndDelete(req.params.id)
-    .then(() => res.redirect("/products"))
+    .then(() => res.redirect("back"))
     .catch((error) => next(error));
 };
 

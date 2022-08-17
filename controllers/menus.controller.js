@@ -55,6 +55,23 @@ module.exports.create = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
   Menu.findByIdAndDelete(req.params.id)
-    .then(() => res.redirect("/restaurants"))
+    .then(() => res.redirect("back"))
     .catch((error) => next(error));
 };
+
+
+module.exports.edit = (req, res, next) => {
+  Menu.findById(req.params.id)
+      .then((menu) => { 
+              res.render("menus/edit", { menu })
+      })
+      .catch((error) => next(error));
+};
+
+
+module.exports.update = (req, res, next) => {
+  Menu.findByIdAndUpdate(req.params.id, req.body).then((menu) => { 
+    const restaurant = menu.restaurant.toString()
+      res.redirect(`/restaurants/${restaurant}`);
+  });
+}

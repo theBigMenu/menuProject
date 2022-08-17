@@ -1,40 +1,47 @@
 <div class="zoom hero-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{menu.background}})">
         <div class="hero-text">
             <img src="{{menu.logo}}" class="card-img-top menu-hero-logo" alt="...">
-            <h1 style="font-size:50px">{{menu.name}}</h1>
-            <p>{{menu.description}}</p>
+            <h1 class="text-white" style="font-size:50px">{{menu.name}}</h1>
+            <p class="text-white">{{menu.description}}</p>
         </div>
 </div>
 
 
-
-
-
-<div class="d-flex justify-content-center align-items-center white">
+<div class="d-flex justify-content-center align-items-center ">
     <div class=" glassmorphism-no-hover pt-5 pb-5 col-12 ">
-        <div class="row justify-content-center align-items-center mt-3 text-center px-5">
+        <div class="row justify-content-center align-items-center mt-3 mx-0 text-center px-5">
 
             <h1 class="mb-5 text-black">CATEGORIES</h1>
-            <hr class="black">
+            <hr class="text-white">
+            
+            <div class=" row col-12 d-flex justify-content-center align-items-center text-center h-100 parent">
             {{#each menu.categories as |category|}}
-                <div class="col-3 d-flex justify-content-center align-items-center text-center mb-4">
-                    <div class="card card-size pt-3">
-                        <div class="row justify-content-center align-items-center text-center position-menu-logo">
-                            <div class="position-relative logo-restaurant-background-circle  d-flex justify-content-center align-items-center text-center">
-                            </div> 
+                <div class="col-3 d-flex justify-content-center align-items-center text-center card card-body mx-2 p-0 card-hover ">
 
-                            <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                                <img src="{{category.logo}}" class="card-img-top restaurant-logo" alt="...">
+                                        <form action="/categories/{{category.id}}/delete" class="m-0 p-0" method="post">
+                                            <button type="submit" class="close"><strong>X</strong></button>
+                                        </form>
+                    <a  class="f-h p-2 " href="/categories/{{category.id}}">
+                        <div class="row col-12 justify-content-center align-items-center text-center min-h-300 m-0">
+
+                            <div class="col-3 d-flex justify-content-center align-items-center text-center w-50">
+                                    <img src="{{category.image}}" class="card-img-top restaurant-logo w-100" alt="...">
                             </div>
+
+                            <div class="col-9 d-flex justify-content-center align-items-center text-center p-0 box w-50">
+                                <div class="row col-12 justify-content-center align-items-center f-h">
+                                    <h5 class="card-title">{{category.name}}</h5>
+                                    <p class="card-text">{{category.description}}</p>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-black">{{category.name}}</h5>
-                            <p class="card-text text-black">{{category.description}}</p>
-                                <a href="/categories/{{category.id}}" class="btn btn-primary">See details</a>
-                        </div>
-                    </div> 
+                    </a>
+                    
+                       <a href="/categories/{{category.id}}/edit"><i class="fa fa-pencil edit" aria-hidden="true"></i></a>
                 </div>
             {{/each}}
+            </div>
             <hr class="black mt-5"/>    
         </div>
 

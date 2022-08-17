@@ -420,7 +420,7 @@ span label{
 }
 
 .logo-restaurant-background-circle{
-  background-color: #2B2B2B ;
+  background-color: white ;
   clip-path: circle();
   width: 120px;
   height: 120px;
@@ -589,14 +589,14 @@ margin-top: 0px;
 }
 
 .text-black{
-  color:  black;
+  color:  #2B2B2B !important;
 }
 
 
 /* Hero for products*/
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");
-  height: 50%;
+  height: 70%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -666,6 +666,61 @@ min-height: fit-content;
   filter: grayscale(100%) brightness(1000%) saturate(0);
 }
 
+.text-white{
+  color: white;
+}
 
 
+.min-h-300{
+  min-height: 300px;
+}
 
+.card-hover:hover{
+  background-color: #f0f0f07d;
+}
+
+
+/* Close buttons and edit button*/
+.parent {
+  position: relative;
+  display: inline-block;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10000;
+  color: white;
+  border: 1px solid #dc3545;
+  background-color: #dc3545;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.close:hover{
+  border: 1px solid #b02a37;
+  background-color: #b02a37;
+}
+
+
+.edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  color: white;
+  border: 1px solid #5e5e5e;
+  background-color: #5e5e5e;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.edit:hover{
+  border: 1px solid #313638;
+  background-color: #313638;
+  cursor: pointer;
+}

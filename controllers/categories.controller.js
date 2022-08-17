@@ -53,7 +53,7 @@ Category.create(category)
 
 module.exports.delete = (req, res, next) => {
     Category.findByIdAndDelete(req.params.id)
-    .then(() => res.redirect("/categories"))
+    .then(() => res.redirect("back"))
     .catch((error) => next(error));
 };
 
