@@ -54,5 +54,7 @@ router.get("/logout", auth.logout)
 
 router.get("/users/:id", secure.isAuthenticated, users.detail);
 router.get("/users/:id/confirm", users.confirm);
+router.get('/users/:id/edit',secure.isAuthenticated, users.edit);
+router.post('/users/:id/edit',secure.isAuthenticated, users.update);
 
 module.exports = router;

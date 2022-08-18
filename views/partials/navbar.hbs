@@ -1,5 +1,3 @@
-<!-- Just an image -->
-
 <div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around">
 
   <nav class="d-flex navbar col-10">
@@ -13,17 +11,16 @@
       {{#if currentUser}}
       <a href="/logout"><button class="btn btn-primary mx-1"> Logout</button></a>   
       <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo ">
-        <div class="col-12">
-          <p style="color:black; font-size:14px">Welcome Back {{currentUser.name}}</p>
+       <div class="col-12">
+          <p style="color:black; font-size:14px">Welcome Back <a href="/users/{{currentUser.id}}">{{currentUser.name}}</a></p>
         </div>
       </div>
-
                     <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo">
                         <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
                         </div> 
 
                         <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
-                            <img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="...">
+                            <a href="/users/{{currentUser.id}}"><img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="..."></a>
                         </div>
                     </div>
 
@@ -43,12 +40,7 @@
 
 <div class="popup hidden " id="myMenuNav">
 	<div class="wrapper glassmorphism list-group d-flex justify-content-center align-items-center">
-      {{#if currentUser}}
-        <div class="row">
-          <p style="color:black;">Welcome Back {{currentUser.name}}</p>
-        </div>
-
-        <div class="row">
+            <div class="row">
               <h2>THE MENU OPTIONS</h2>
         </div>
 
@@ -58,7 +50,6 @@
             <li><a class="nav-group-item" href="/menus">My Menus</li></a></li>
           </ul>
         </div>
-      {{/if}}
 
       <br>
 

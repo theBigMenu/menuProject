@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center align-items-center col-12 full-heigth">
+  <div class="row d-flex justify-content-center align-items-center mt-3 text-center  glassmorphism-no-hover pt-3 pb-4 px-2">
+    <div class="col-10 justify-content-center align-items-center">
+      <h1 class="py-3">Edit</h1>
+
+         <div class="input-group mb-1">
+           {{user.name}}
+        </div>
+      <form action="/users/{{user.id}}/edit" method="post">
+        <div>
+            <input id="image" type="text" name="image" value="{{ user.image }}" class="form-control {{#if user.image}}is-invalid{{/if}}"
+              placeholder="Enter your profile image url..." />
+            {{#if errors.logo }}<div class="invalid-feedback">{{ errors.logo }}
+        </div>{{/if}}
+      
+          <div class="d-grid gap-2 col-6 mx-auto mt-3">
+            <button class="btn btn-primary" type="submit">Update</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+

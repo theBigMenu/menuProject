@@ -30,11 +30,7 @@ const categorySchema = new Schema ({
             message: (image) => `Invalid URL`,
             },
         },
-        menu: {
-            type: Schema.Types.ObjectId,
-            ref: 'Menu'
-        },
-        products: [{
+    products: [{
             type: Schema.Types.ObjectId,
             ref: 'Product'
         }],

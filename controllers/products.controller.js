@@ -18,6 +18,7 @@ module.exports.detail = (req, res, next) => {
 
 module.exports.new = (req, res, next) => {
 
+
   Category.find()
   .then(categories=>{
     const product = {
