@@ -53,19 +53,21 @@
         </div>
 
       <br>
+      {{!-- {{#if currentUser}} --}}
 
         <div class="row mh-25 group-nav-icons">
-            <a href="/users/{{currentUser.id}}">
+            <a {{#if currentUser}} href="/users/{{currentUser.id}}" {{else}} href="/register" {{/if}}>
               <div class="col-12 my-2 d-flex justify-content-center align-items-center text-center"> 
                   <img class="icon-nav-circle" src="\images\SVG\BM_Profile_icon.svg">
               </div>
             </a>
             <ul class="d-flex col-12 nobull justify-content-center">
-            <li><a class="nav-group-item" href="/users/{{currentUser.id}}">Profile</a></li>
+            <li><a class="nav-group-item" {{#if currentUser}} href="/users/{{currentUser.id}}" {{else}} href="/register" {{/if}}> Profile</a></li>
           </ul>
         </div>
 
       <br>
+      {{!-- {{/if}} --}}
 
         <div class="row mh-25 group-nav-icons">
             <a href="/restaurants">
