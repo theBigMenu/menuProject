@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center align-items-center full-heigth">
-  <div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5">
+  <div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5 animate__animated animate__fadeIn">
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-12 d-flex justify-content-center align-items-center"> 
-        <h1 class="mb-4 create-menu">Details of your account</h1>
+        <h1 class="mb-4 create-menu primary-color">Details of your account</h1>
       </div> 
       <div class="col-12 d-flex justify-content-center align-items-center"> 
           <h1>Hey!  {{user.name}}</h1>
@@ -10,20 +10,25 @@
       <div class="col-12 d-flex justify-content-center align-items-center text-center"> 
           <p>Here is your account information:<br>{{user.email}}</p>
       </div> 
-      <div class="col-12 d-flex justify-content-center align-items-center text-center"> 
-          <img src="{{user.image}}">
+      <div class="col-5 my-2 d-flex justify-content-center align-items-center text-center"> 
+          <img class="img-circle" src="{{user.image}}">
       </div>  
       <div class="col-12 d-flex justify-content-center m-2"> 
           
             <form action="/users/{{user.id}}/edit" method="get">
-                      <button type="submit" class="btn btn-primary">Edit your profile picture</button>                  
+                      <button type="submit" class="btn btn-secondary mx-1">Edit your profile picture</button>                  
             </form>
+
+            <form action="/logout" method="get">
+                      <button type="submit" class="btn btn-primary mx-1"> Logout</button>                  
+            </form>
+
       </div>
-      <div class="col-12 d-flex justify-content-center align-items-center">         
+      <div class="col-12 d-flex justify-content-center align-items-top overflow-auto restaurants-list">         
             <ul class="p-0">
-                <p>This are your restaurants:</p>
+                <h5> <strong>This are your restaurants:</strong></h2>
                 {{#each restaurant as |restaurants|}}
-                    <li>{{restaurants.name}}</li>
+                    <li class="b-0">{{restaurants.name}}</li>
                 {{/each}}
             </ul>
       </div>

@@ -1,25 +1,24 @@
-<div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around">
+<div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around px-5 animate__animated animate__fadeInDownBig">
 
-  <nav class="d-flex navbar col-10">
-      <div class="navbar-brand col-8">
+  <nav class="d-flex navbar col-12">
+      <div class="navbar-brand col-4 m-0">
           <a  href="/">
               <img src="\images\Logo_BigMenu.svg" width="90" height="90" alt="">
           </a>
       </div>
 
-    <div class="d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-md-end col-2">
+    <div class="col-2 d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-end ">
       {{#if currentUser}}
-      <a href="/logout"><button class="btn btn-primary mx-1"> Logout</button></a>   
       <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo ">
-       <div class="col-12">
-          <p style="color:black; font-size:14px">Welcome Back <a href="/users/{{currentUser.id}}">{{currentUser.name}}</a></p>
+       <div class="col-12 p-0">
+          <p>Welcome Back <a class="back" href="/users/{{currentUser.id}}"> <strong> {{currentUser.name}} </strong> </a></p>
         </div>
       </div>
-                    <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo">
+                    <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo p-0">
                         <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
                         </div> 
 
-                        <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center">
+                        <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center p-0">
                             <a href="/users/{{currentUser.id}}"><img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="..."></a>
                         </div>
                     </div>
@@ -28,59 +27,75 @@
         <a href="/login"><button class="btn btn-primary mx-1"> Login</button></a>
         <a href="/register"><button class="btn btn-secondary mx-1"> Sign Up</button></a>
       {{/if}}
+    <div class="col-0 hamburger" id="hamburgerMenu"></div>
 
     </div>
-    
-
-    <div class="col-0 hamburger" id="hamburgerMenu"></div>
   </nav>
 </div>
 
 
 
-<div class="popup hidden " id="myMenuNav">
-	<div class="wrapper glassmorphism list-group d-flex justify-content-center align-items-center">
-            <div class="row">
-              <h2>THE MENU OPTIONS</h2>
-        </div>
-
-        <div class="row">
-          <ul class="d-flex col-12 nobull justify-content-center">
-            <li><a class="nav-group-item" href="/menus/new">Create New Menu</a></li>
-            <li><a class="nav-group-item" href="/menus">My Menus</li></a></li>
-          </ul>
-        </div>
-
-      <br>
-
-      {{#if currentUser}}
-        <div class="row">
-              <h2>RESTAURANTS OPTIONS</h2>
-        </div>
-
-        <div class="row">
-          <ul class="d-flex col-12 nobull justify-content-center">
-            <li><a class="nav-group-item" href="/restaurants/new">Create New Restaurants</a></li>
-            <li><a class="nav-group-item" href="/restaurants">My Restaurants</li></a></li>
-          </ul>
-        </div>
-      {{/if}}
+<div class="popup hidden" id="myMenuNav">
+	<div class=" wrapper background-primary-color list-group d-flex justify-content-center align-items-center">
 
 
 
-      <br>
 
-        <div class="row">
-            <h2>OUR AWESOME WEB</h2>
-        </div>
-
-        <div class="row">
+        <div class="row mh-25 group-nav-icons">
+            <a href="/">
+              <div class="col-12 my-2 d-flex justify-content-center align-items-center text-center"> 
+                    <img class="icon-nav-circle" src="\images\SVG\BM_Home_icon.svg">
+              </div> 
+            </a>
             <ul class="d-flex col-12 nobull justify-content-center">
             <li><a class="nav-group-item" href="/">Home</a></li>
-            <li><a class="nav-group-item" href="/">The Team</a></li>
-            <li><a class="nav-group-item" href="/">Contact and Suport</a></li>
           </ul>
         </div>
+
+      <br>
+
+        <div class="row mh-25 group-nav-icons">
+            <a href="/users/{{currentUser.id}}">
+              <div class="col-12 my-2 d-flex justify-content-center align-items-center text-center"> 
+                  <img class="icon-nav-circle" src="\images\SVG\BM_Profile_icon.svg">
+              </div>
+            </a>
+            <ul class="d-flex col-12 nobull justify-content-center">
+            <li><a class="nav-group-item" href="/users/{{currentUser.id}}">Profile</a></li>
+          </ul>
+        </div>
+
+      <br>
+
+        <div class="row mh-25 group-nav-icons">
+            <a href="/restaurants">
+              <div class="col-12 my-2 d-flex justify-content-center align-items-center text-center "> 
+                  <img class="icon-nav-circle" src="\images\SVG\BM_Restaurant_icon.svg">
+              </div>
+            </a>
+
+            <ul class="d-flex col-12 nobull justify-content-center">
+            <li><a class="nav-group-item" href="/restaurants">Restaurants</a></li>
+          </ul>
+        </div>
+
+      <br>
+
+
+
+        <div class="row mh-25 group-nav-icons">
+            <a href="/restaurants">
+              <div class="col-12 my-2 d-flex justify-content-center align-items-center text-center"> 
+                  <img class="icon-nav-circle" src="\images\SVG\BM_Contact_icon.svg">
+              </div>
+            </a>
+            <ul class="d-flex col-12 nobull justify-content-center">
+            <li><a class="nav-group-item" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+
+
+
 
 	</div>
 </div>

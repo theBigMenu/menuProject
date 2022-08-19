@@ -16,9 +16,9 @@ var directionMenu = 1;
 });
 
 
-let hambuerMenu = document.getElementById('hamburgerMenu')
+const hambuerMenu = document.getElementById('hamburgerMenu')
 hambuerMenu.addEventListener('click', (e) => {
-        let popup = document.querySelector('.popup')
+        const popup = document.querySelector('.popup')
         popup.classList.toggle('hidden')
     })
 

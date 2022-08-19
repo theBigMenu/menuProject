@@ -16,7 +16,6 @@ body{
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.071);
   border-radius: 10px;
-
 }
 
 /* Handle */
@@ -177,34 +176,59 @@ hr.black {
   margin-top: 600px;
 }
 
+.fade-in-1{
+  animation: fadein 2s;
+}
 
 .nav{
   z-index: 100;
 }
 
-
+.group-nav-icons{
+  opacity: 1;
+  animation-delay: 6s;
+  animation: fadein 2s;
+}
 
 .popup {
 	background: rgba(100, 100, 100, 0.6);
 	position: fixed;
 	z-index: 60;
-	height: 100vw;
+	height: 100vw ;
 	width: 100vw;
 	left: 0;
 	top: 0;
+  animation: fadein 2s;
+  opacity: 1;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
 }
 
 .wrapper {
   z-index: 60;
-  width: 101%;
-  height: 100vh; 
+  height: calc(100vh - 100px) ; 
   position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  padding-top: 125px;
+  transform: translate(0%, 0%);
+  right: 0%;
+  top: 100px;
+
+  width: 20vw;
+  animation: widhtWrapper 2s;
 }
 
+
+@keyframes widhtWrapper {
+  0% { width: 0vw }
+  100% { width: 20vw}
+}
+
+@keyframes heightWrapper {
+  0% { height: 0vh }
+  100% { height: 100vh}
+}
 
 .hidden{
   display: none;
@@ -215,21 +239,23 @@ hr.black {
 }
 
 .nav-group-item{
-  color: #2B2B2B;
+  color: white;
   background: #F55951;
   backdrop-filter: blur( 5px );
   -webkit-backdrop-filter: blur( 5px );
   padding: 5px 20px;
   font-size: 20px;
+  border-radius: 5px;
   transition: all 0.5s ease-in-out;
 }
 
 
 
 .nav-group-item:hover, .nav-group-item:active{
-  color: #a73a33;
+  color: white;
   box-shadow: 0 8px 32px 0 rgba(3, 3, 4, 0.095);
-  background-color: #2B2B2B;
+  background-color: #a73a33;
+  border-radius: 5px;
 }
 
 .nobull {
@@ -320,7 +346,6 @@ label{
   backdrop-filter: blur( 17px );
   -webkit-backdrop-filter: blur( 17px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  transition: all 0.5s ease-in-out;
 }
 
 .card:hover{
@@ -346,10 +371,27 @@ label{
 
 .img-circle{
 	clip-path: circle();
-  width: 300px ;
-  max-width: 300px;
-  max-height: 150px;
+  min-width: 100%;
+  max-width: 100%;
 }
+
+.icon-nav-circle{
+	clip-path: circle();
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 10vh;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.icon-nav-circle:hover{
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+  cursor: pointer;
+}
+
 
 .menu-logo{
   min-width: 100%;
@@ -378,6 +420,20 @@ label{
   clip-path: circle();
 }
 
+.restaurants-list{
+max-height: 100px;
+}
+
+.b-0{
+border: 0px;
+}
+
+.primary-color{
+  color: #F55951;
+}
+.background-primary-color{
+  background-color: #F55951;
+}
 span label{
   margin: 0 0 0 4 !important;
   font-size: 12px !important;
@@ -530,13 +586,17 @@ span label{
 }
 
 
-p.back {
+p.back, a.back {
   color: #f55951  !important;
   transition: all 0.5s ease-in-out;
 }
-p.back:hover {
+
+
+p.back:hover, a.back:hover {
   color: #a73a33  !important;
 }
+
+
 
 .background-logo-size{
   width: 700px;
@@ -724,3 +784,60 @@ min-height: fit-content;
   background-color: #313638;
   cursor: pointer;
 }
+
+
+/* INICIO DE LA ANIMACION DE LOS ITEMS DEL NAVEGADOR */
+
+.column div {
+	position: relative;
+	float: left;
+	width: 300px;
+	height: 200px;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+
+.column div span {
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	z-index: -1;
+	display: block;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+}
+figure {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+/* Zoom In #1 */
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+/* FIN DE LA ANIMACION DE LOS ITEMS DEL NAVEGADOR */

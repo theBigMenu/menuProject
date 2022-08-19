@@ -19,6 +19,7 @@
   "homepage": "https://github.com/theBigMenu/menuProject#readme",
   "dependencies": {
     "@lottiefiles/lottie-interactivity": "^1.6.1",
+    "animate.css": "^4.1.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.0",
     "connect-mongo": "^4.6.0",
