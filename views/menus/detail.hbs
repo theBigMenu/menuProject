@@ -16,7 +16,7 @@
             
             <div class=" row col-12 d-flex justify-content-center align-items-center text-center h-100 parent">
             {{#each menu.categories as |category|}}
-                <div class="col-3 d-flex justify-content-center align-items-center text-center card card-body mx-2 p-0 card-hover ">
+                <div class="col-3 d-flex justify-content-center align-items-center text-center card card-body mx-4 my-4 p-0 card-hover categories-card">
 
                                         <form action="/categories/{{category.id}}/delete" class="m-0 p-0" method="post">
                                             <button type="submit" class="close"><strong>X</strong></button>
@@ -26,7 +26,7 @@
                         <div class="row col-12 justify-content-center align-items-center text-center min-h-300 m-0">
 
                             <div class="col-3 d-flex justify-content-center align-items-center text-center w-50">
-                                    <img src="{{category.image}}" class="card-img-top restaurant-logo w-100" alt="...">
+                                    <img src="{{category.image}}" class="card-img-top categories-image w-100" alt="...">
                             </div>
 
                             <div class="col-9 d-flex justify-content-center align-items-center text-center p-0 box w-50">
@@ -39,7 +39,7 @@
                         </div>
                     </a>
                     
-                       <a href="/categories/{{category.id}}/edit"><i class="fa fa-pencil edit" aria-hidden="true"></i></a>
+                        <a href="/categories/{{category.id}}/edit"><i class="fa fa-pencil edit" aria-hidden="true"></i></a>
                 </div>
             {{/each}}
             </div>

@@ -73,5 +73,6 @@ module.exports.update = (req, res, next) => {
   Menu.findByIdAndUpdate(req.params.id, req.body).then((menu) => { 
     const restaurant = menu.restaurant.toString()
       res.redirect(`/restaurants/${restaurant}`);
-  });
+  })
+  .catch((error) => next(error));
 }

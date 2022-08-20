@@ -5,3 +5,5 @@ module.exports = {
     Restaurant: require('./restaurant.model'),
     Category: require('./category.model'),
   }
+
+  

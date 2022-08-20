@@ -11,7 +11,7 @@
 
             <div class="row col-12  d-flex justify-content-center align-items-center text-center parent">
             {{#each restaurants as |restaurant|}}
-                <div class="col-5 d-flex justify-content-center align-items-center text-center mb-4 card card-body mx-2 h-100">
+                <div class="col-5 d-flex justify-content-center align-items-center text-center mb-4 card card-body mx-2 h-100 restaurant-card">
                     <form action="/restaurants/{{restaurant.id}}/delete" class="m-0 p-0" method="post">
                         <button type="submit" class="close"><strong>X</strong></button>
                     </form>

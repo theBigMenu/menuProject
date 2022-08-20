@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const { Menu, Category } = require("../models");
+const { Menu, Category, Product } = require("../models");
+const AllergensPictures = require('../data/categoriesPictures.allergens.json')
 
 
 module.exports.list = (req, res, next) => {
@@ -8,6 +9,7 @@ module.exports.list = (req, res, next) => {
         res.render('categories/list', { categories })
       })
       .catch(next)
+
   }
 
   module.exports.detail = (req, res, next) => {

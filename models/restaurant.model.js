@@ -61,7 +61,7 @@ const restaurantSchema = new Schema ({
         },
         description:{
             type: String,
-            maxLength: [100, "Description needs at max 100 chars"],
+            maxLength: [300, "Description needs at max 300 chars"],
         },
         user: {
             type: Schema.Types.ObjectId,

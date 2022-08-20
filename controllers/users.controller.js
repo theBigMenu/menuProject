@@ -25,6 +25,7 @@ module.exports.confirm = (req, res, next) => {
 };
 
 module.exports.edit = (req, res, next) => {
+
   User.findById(req.params.id)
       .then((user) => { 
               res.render("users/edit", { user })

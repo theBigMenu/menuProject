@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const categoriesAllergens = require('../data/categories.allergens.json')
+const AllergensPictures = require('../data/categoriesPictures.allergens.json')
 
 const productSchema = new Schema ({
         name: {
@@ -28,7 +29,7 @@ const productSchema = new Schema ({
         },
         description:{
             type: String,
-            maxLength: [150, "Description needs at max 150 chars"],
+            maxLength: [300, "Description needs at max 150 chars"],
         },
         allergens:{
             type: [{
@@ -36,15 +37,22 @@ const productSchema = new Schema ({
                 enum: categoriesAllergens
             }]
         },
-        categories: {
+        category: {
             type: Schema.Types.ObjectId,
             ref: 'Category'
         },
+        allergensPictures:{
+            type: [{
+                type: String
+            }]
+        },
 })
+
 
 productSchema.pre("validate", function (next) {
     this.image = this.image || undefined;
     this.description = this.description || undefined;
+
     next();
 });
 

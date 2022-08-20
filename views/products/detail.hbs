@@ -1,9 +1,46 @@
-<h1>Product</h1>
+<div class=" justify-content-center align-items-start text-center ">
+    <div class="m-5 p-5 first-top-margin">
+        <br> 
+    </div>
 
-<p>{{product.name}}</p>
+    <div class="container glassmorphism-no-hover pt-5 pb-5 mt-5 col-12 fade-in-1 ">
+        <div class="row justify-content-center align-items-center mt-3 mx-0 text-center px-5">
 
-<form action="/menus/{{product.id}}/delete" method="post">
-    <button type="submit">Delete product</button>
-</form>
+            <hr>
+            <div class="row col-12  d-flex justify-content-center align-items-center text-center parent">
+            
 
-<a href="/products">Go to list</a>
+
+                    <div class="card card-body w-100 pt-3 justify-content-center align-items-center text-center">
+                        <div class="row justify-content-center align-items-center text-center position-menu-logo">
+                                <img src="{{product.image}}" class="card-img-top products-image-detail " alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h1 class="primary-color"><strong>{{product.name}}</strong></h1>
+                            <h2 class="card-title text-black">Price: {{product.price}}€</h2>                            
+                            <h4 class="text-black">{{product.description}}</h4>
+                            <h4 class="text-black text-l mt-5 primary-color"><strong class="primary-color">Allergens:</strong></h4>
+                            <ul class="">
+                            {{#each product.allergens as |allergen|}}
+                                    <li id="{{allergen}}" class="text-l"><h5> {{allergen}}</h5></li>
+                            {{/each}}
+                            </ul>
+
+
+
+            </div>
+            <hr class="mt-5"/>    
+        </div>
+    </div>
+
+
+</div>
+
+
+</div>
+</div>
+ <div class="m-5 p-5 first-top-margin">
+        <br> 
+    </div>
+
+

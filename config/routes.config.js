@@ -42,8 +42,8 @@ router.get("/products/:id/new", secure.isAuthenticated, products.new);
 router.post("/products/:id/create", secure.isAuthenticated, products.create);
 router.get("/products/:id", secure.isAuthenticated, products.detail);
 router.post("/products/:id/delete", secure.isAuthenticated, products.delete);
-// router.post('/products/:id/edit',secure.isAuthenticated, products.update);
-
+router.get('/products/:id/edit',secure.isAuthenticated, products.edit);
+router.post('/products/:id/edit',secure.isAuthenticated, products.update);
 
 router.get("/register", auth.register);
 router.post("/register", auth.doRegister);

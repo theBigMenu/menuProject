@@ -1,13 +1,27 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="d-flex justify-content-center align-items-center full-heigth">
   <div class="container glassmorphism container-new-menu pt-5 pb-5 mt-5">
     <div class="row d-flex justify-content-center align-items-center m-0">
       <div class="col-12 d-flex justify-content-center align-items-center"> 
-        <h1 class="mb-4 create-menu">Create a New product</h1>
+        <h1 class="mb-4 create-menu">Update to {{product.name}}</h1>
       </div> 
     </div>
     <div class="row justify-content-center m-0">
       <div class="col-12 d-flex justify-content-center align-items-center p-0 text-center"> 
-        <form action="/products/{{product.category}}/create" method="POST" class="col-10">
+        <form action="/products/{{product.id}}/edit" method="POST" class="col-10">
         
           <div class="input-group mb-3 ">
             <span class="no-label input-group-text"><i class="fa fa-tag fa-fw"></i></span>
@@ -54,13 +68,11 @@
 
           <label for="allergens" style="primary-color">Allergens</label>
           <div class="input-group mb-4 ">
-            <div class="form-check form-switch overflow-auto restaurants-list bg-white">
-                <div class="justify-content-start align-items-center">
+            <div class="form-check form-switch  overflow-auto restaurants-list bg-white">
                 {{#each categoriesAllergens as |allergen|}}
-                  <input class="form-check-input col-12 mt-3" type="checkbox" id="allergens" name="allergens" value="{{allergen}}"/>
+                  <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="allergens" name="allergens"  value="{{allergen}}"/>
                   <label class="form-check-label mt-2 col-12 text-l" for="{{allergen}}">{{allergen}}</label>
                 {{/each}}
-              </div>
             </div>
           </div>
 

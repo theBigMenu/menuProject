@@ -1,34 +1,16 @@
 [
-    "CELERY",
-
-    "NUTS",
-    
-    "MUSTARD",
-    
-    "EGGS",
-    
-    "SOY",
-    
-    "SESAME SEED",
-    
-    "PEANUTS",
-    
-    "GLUTEN",
-    
-    "CRUSTACEAN",
-    
-    "FISH",
-    
-    "SULPHITES",
-    
-    "DAIRY PRODUCTS",
-    
-    "LUPIN BEAN",
-    
-    "ASK TO THE WAITER",
-    
-    "MOLLUSKS",
-    
-    "ALLERGEN FREE"
-    
+    "Celery",
+    "Nuts",
+    "Mustard",
+    "Eggs",
+    "Soy",
+    "Sesame Seed",
+    "Peanuts",
+    "Gluten",
+    "Crustacean",
+    "Fish",
+    "Sulphites",
+    "Dairy Products",
+    "Lupin Bean",
+    "Mollusks"
 ]

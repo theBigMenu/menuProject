@@ -325,7 +325,7 @@ label{
 .input-group-text{
   background-color: #F55951;
   border: 1px solid  #F55951;
-  color: #2B2B2B;
+  color: white;
 }
 
 
@@ -399,6 +399,36 @@ label{
   clip-path: circle();
 }
 
+.products-image{
+  min-width: 50%;
+  max-width: 50%;
+  clip-path: circle();
+}
+
+.products-card{
+  max-width: 25%;
+}
+
+.restaurant-card{
+  max-width: 50%;
+}
+
+
+.categories-card{
+  max-width: 33%;
+}
+
+.categories-image{
+  width: 100%;
+  clip-path: circle();
+}
+
+.card-text{
+  height: 65px;
+  max-height: 80px;
+  overflow: scroll;
+}
+
 .menu-logo-cards{
   min-width: 100%;
   max-width: 100%;
@@ -421,7 +451,7 @@ label{
 }
 
 .restaurants-list{
-max-height: 100px;
+max-height: 200px;
 }
 
 .b-0{
@@ -431,6 +461,7 @@ border: 0px;
 .primary-color{
   color: #F55951;
 }
+
 
 .secondary-color{
   color: #2B2B2B;
@@ -846,3 +877,41 @@ figure:hover+span {
 
 
 /* FIN DE LA ANIMACION DE LOS ITEMS DEL NAVEGADOR */
+
+
+.v-scroll-none{
+  overflow-x: hidden
+}
+
+.bg-white{
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.252);
+}
+
+.form-switch .form-check-input{
+  border-color: #f55951;
+}
+
+
+.form-switch:focus .form-check-input:focus{
+  border-color: #f55951;
+}
+
+.form-switch {
+  padding: 0.5em 0 0.5em 3em;
+}
+
+.text-l{
+  text-align: left !important;
+}
+
+input.bug{
+  margin-top: 60px !important;
+  margin-bottom: 50px !important;
+}
+
+div > input.form-check-input:first-child {
+  margin-top: 15px !important;
+}
+

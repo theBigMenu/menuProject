@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Category, Product, Menu } = require("../models");
+const categoriesAllergens = require('../data/categories.allergens.json')
 
 
 module.exports.list = (req, res, next) => {
@@ -17,18 +18,11 @@ module.exports.detail = (req, res, next) => {
 };
 
 module.exports.new = (req, res, next) => {
-
-
-  Category.find()
-  .then(categories=>{
     const product = {
       category: req.params.id
   };
-   res.render(('products/new'), {categories, product}) 
-   })
-   .catch(next) 
+    res.render(('products/new'), {product, categoriesAllergens}) 
 };
-
 
 
 module.exports.create = (req, res, next) => {
@@ -50,7 +44,7 @@ Product.create(producto)
 .catch((error) => {
     if (error instanceof mongoose.Error.ValidationError) {
         console.error(error);
-        res.render("products/new", { errors: error.errors, product });
+        res.render(`products/new`, { errors: error.errors, product });
     } else {
         next(error);
     }
@@ -64,4 +58,21 @@ module.exports.delete = (req, res, next) => {
 };
 
 
- 
+module.exports.edit = (req, res, next) => {
+  Product.findById(req.params.id)
+      .then((product) => { 
+              res.render("products/edit", { product, categoriesAllergens })
+      })
+      .catch((error) => next(error));
+};
+
+
+module.exports.update = (req, res, next) => {
+  Product.findByIdAndUpdate(req.params.id, req.body)
+  .then((product) => { 
+    const category = product.category.toString()
+      res.redirect(`/categories/${category}`);
+  })
+  .catch((error) => next(error));
+}
+
