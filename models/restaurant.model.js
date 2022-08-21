@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const categoriesRestaurant = require('../data/categories.restaurants.json')
+const servicesRestaurant = require('../data/services.restaurants.json')
 
 const restaurantSchema = new Schema ({
         name: {
@@ -73,6 +74,13 @@ const restaurantSchema = new Schema ({
             ref: 'Menu',
             required: true
         }],
+        services: {
+            type: [{
+                type: String,
+                enum: servicesRestaurant,
+                required: true,
+            }]
+        },  
 },
 {timestamps: true}
 )

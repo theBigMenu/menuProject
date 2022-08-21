@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 const { Restaurant, User } = require("../models");
 const categoriesRestaurant = require('../data/categories.restaurants.json')
+const servicesRestaurant = require('../data/services.restaurants.json')
 
 module.exports.list = (req, res, next) => {
     Restaurant.find({user:req.user.id})
@@ -22,15 +23,17 @@ module.exports.detail = (req, res, next) => {
 };
 
 module.exports.new = (req, res, next) => {
-    res.render("restaurants/new", {categoriesRestaurant});
+    res.render("restaurants/new", {categoriesRestaurant, servicesRestaurant});
 };
 
 module.exports.create = (req, res, next) => {
+
+    
     const restaurant = {
         ...req.body,
-        user:req.user.id
+        user:req.user.id,
+        logo: req.file.path
     };
-
 Restaurant.create(restaurant)
 
     .then((restaurant) =>{
@@ -49,7 +52,7 @@ Restaurant.create(restaurant)
     .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
             console.error(error);
-            res.render("restaurants/new", { errors: error.errors, restaurant, categoriesRestaurant });
+            res.render("restaurants/new", { errors: error.errors, restaurant, categoriesRestaurant, servicesRestaurant });
         } else {
             next(error);
         }
@@ -66,19 +69,25 @@ module.exports.delete = (req, res, next) => {
 
 
 module.exports.edit = (req, res, next) => {
+
     Restaurant.findById(req.params.id)
         .then((restaurant) => { 
-            if(restaurant.user.toString() === req.user.id)
-                res.render("restaurants/edit", { restaurant, categoriesRestaurant })
-            else 
+            if(restaurant.user.toString() === req.user.id){
+                res.render("restaurants/edit", { restaurant, categoriesRestaurant, servicesRestaurant })
+            } else {
                 res.redirect("/");
+            }
         })
         .catch((error) => next(error));
 };
 
 
 module.exports.update = (req, res, next) => {
-    Restaurant.findByIdAndUpdate(req.params.id, req.body).then((restaurant) => { 
+
+    Restaurant.findByIdAndUpdate(req.params.id, req.body)
+    .then((restaurant) => { 
+        restaurant.logo = req.file.path
+        restaurant.save()
         res.redirect("/restaurants");
     });
 }
