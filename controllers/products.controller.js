@@ -44,7 +44,7 @@ Product.create(producto)
 .catch((error) => {
     if (error instanceof mongoose.Error.ValidationError) {
         console.error(error);
-        res.render(`products/new`, { errors: error.errors, product });
+        res.render(`products/new`, { errors: error.errors, product, categoriesAllergens });
     } else {
         next(error);
     }

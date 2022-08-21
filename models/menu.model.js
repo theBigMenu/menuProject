@@ -9,7 +9,7 @@ const menuSchema = new Schema ({
         },
         logo: {
             type: String,
-            default: "https://loremflickr.com/320/240/brazil",
+            default: "https://loremflickr.com/320/240/food",
             validate: {
                 validator: function (image) {
                 try {
@@ -24,7 +24,7 @@ const menuSchema = new Schema ({
             },
         background: {
             type: String,
-            default: "https://loremflickr.com/320/240/brazil",
+            default: "https://loremflickr.com/320/240/food",
             validate: {
                 validator: function (image) {
                 try {
@@ -39,7 +39,7 @@ const menuSchema = new Schema ({
             },
         description:{
             type: String,
-            maxLength: [150, "Title needs at least 150 chars"],
+            maxLength: [300, "Title needs at least 300 chars"],
         },
         active: {
             type: Boolean,

@@ -11,7 +11,7 @@
           <p>Here is your account information:<br>{{user.email}}</p>
       </div> 
       <div class="col-5 my-2 d-flex justify-content-center align-items-center text-center"> 
-          <img class="img-circle" src="{{user.image}}">
+          <img class="img-circle-user" src="{{user.image}}">
       </div>  
       <div class="col-12 d-flex justify-content-center m-2"> 
           
@@ -24,6 +24,7 @@
             </form>
 
       </div>
+      {{#if restaurant}}
       <div class="col-12 d-flex justify-content-center align-items-top overflow-auto restaurants-list">         
             <ul class="p-0">
                 <h5> <strong>This are your restaurants:</strong></h2>
@@ -32,6 +33,7 @@
                 {{/each}}
             </ul>
       </div>
+      {{/if}}      
     </div>
       
   </div>

@@ -28,8 +28,8 @@ router.get("/categories/:id/new", secure.isAuthenticated, categories.new);
 router.post("/categories/:id/create", secure.isAuthenticated, categories.create);
 router.get("/categories/:id", secure.isAuthenticated, categories.detail);
 router.post("/categories/:id/delete", secure.isAuthenticated, categories.delete);
-// router.get('/categories/:id/edit',secure.isAuthenticated, categories.edit);
-// router.post('/categories/:id/edit',secure.isAuthenticated, categories.update);
+router.get('/categories/:id/edit',secure.isAuthenticated, categories.edit);
+router.post('/categories/:id/edit',secure.isAuthenticated, categories.update);
 
 // router.get("/grupo", secure.isAuthenticated, grupo.list);
 // router.get("/grupo/:id/new", secure.isAuthenticated, menus.new);

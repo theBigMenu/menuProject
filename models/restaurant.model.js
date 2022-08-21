@@ -6,18 +6,19 @@ const restaurantSchema = new Schema ({
         name: {
             type: String,
             required: "Title is required",
-            maxLength: [60, "Title needs at least 60 chars"],
+            maxLength: [120, "Name needs at max 60 chars"],
             required: true,
         },
         category: {
             type: [{
                 type: String,
-                enum: categoriesRestaurant
+                enum: categoriesRestaurant,
+                required: true,
             }]
         },
         logo: {
             type: String,
-            default: "https://loremflickr.com/320/240/brazil",
+            default: "https://loremflickr.com/320/240/food",
             validate: {
                 validator: function (image) {
                 try {
@@ -47,21 +48,20 @@ const restaurantSchema = new Schema ({
             },
         }],*/
         phoneNumber: {
-            type: Number,
-            required: true,
+            type: Number
         },
         delivery: { 
             type: Boolean,
-            default: false,
-            required: true,
+            default: false
         },        
         address:{
                 type: String,
-                maxLength: [100, "The info of the last order needs at max 100 chars"],
+                maxLength: [500, "Address needs at max 500 chars"],
         },
         description:{
             type: String,
             maxLength: [300, "Description needs at max 300 chars"],
+            required: true
         },
         user: {
             type: Schema.Types.ObjectId,
@@ -70,9 +70,12 @@ const restaurantSchema = new Schema ({
         },
         menu: [{
             type: Schema.Types.ObjectId,
-            ref: 'Menu'
+            ref: 'Menu',
+            required: true
         }],
-})
+},
+{timestamps: true}
+)
 
 restaurantSchema.pre("validate", function (next) {
     this.logo = this.logo || undefined;

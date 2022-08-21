@@ -29,7 +29,7 @@
             {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
 
             <span class="no-label input-group-text"><i class="fa fa-eur fa-fw"></i></span>
-            <input id="price" type="number" name="price" value="{{ product.price }}" class="form-control {{#if errors.price }}is-invalid{{/if}}" placeholder="Product price..." />
+            <input id="price" type="number" name="price" step="0.01" value="{{ product.price }}" class="form-control {{#if errors.price }}is-invalid{{/if}}" placeholder="Product price..." />
             {{#if errors.price }}<div class="invalid-feedback">{{ errors.price }}</div>{{/if}}
           </div>
 

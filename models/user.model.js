@@ -52,7 +52,9 @@ const userSchema = new Schema({
         message: (image) => `Invalid URL`,
         },
     },
-});
+},
+{timestamps: true}
+);
 
 userSchema.pre("save", function (next) {
   if (this.isModified("password")) {

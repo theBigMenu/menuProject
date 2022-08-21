@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const { Menu, Category, Product } = require("../models");
-const AllergensPictures = require('../data/categoriesPictures.allergens.json')
+const { Menu, Category } = require("../models");
 
 
 module.exports.list = (req, res, next) => {
@@ -64,18 +63,18 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.edit = (req, res, next) => {
     Category.findById(req.params.id)
-        .then((categories) => { 
-            if(category.user.toString() === req.user.id)
-                res.render("categories/edit", { categories })
-            else 
-                res.redirect("/");
+        .then((category) => { 
+                res.render("categories/edit", { category })
         })
         .catch((error) => next(error));
-};
+  };
 
 
-module.exports.update = (req, res, next) => {
-    Category.findByIdAndUpdate(req.params.id, req.body).then((categories) => { 
-        res.redirect("/categories");
-    });
-}
+  module.exports.update = (req, res, next) => {
+    Category.findByIdAndUpdate(req.params.id, req.body).then((category) => { 
+      const menu = category.menu.toString()
+        res.redirect(`/menus/${menu}`);
+    })
+    .catch((error) => next(error));
+  }
+  

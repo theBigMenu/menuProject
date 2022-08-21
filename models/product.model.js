@@ -11,7 +11,7 @@ const productSchema = new Schema ({
         },
         image: {
             type: String,
-            default: "https://loremflickr.com/320/240/brazil",
+            default: "https://loremflickr.com/320/240/food",
             validate: {
                 validator: function (image) {
                 try {
@@ -29,7 +29,6 @@ const productSchema = new Schema ({
         },
         description:{
             type: String,
-            maxLength: [300, "Description needs at max 150 chars"],
         },
         allergens:{
             type: [{
@@ -46,7 +45,9 @@ const productSchema = new Schema ({
                 type: String
             }]
         },
-})
+},
+{timestamps: true}
+)
 
 
 productSchema.pre("validate", function (next) {

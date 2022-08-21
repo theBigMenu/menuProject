@@ -17,7 +17,7 @@ const categorySchema = new Schema ({
     },
     image: {
         type: String,
-        default: "https://loremflickr.com/320/240/brazil",
+        default: "https://loremflickr.com/320/240/food",
         validate: {
             validator: function (image) {
             try {
