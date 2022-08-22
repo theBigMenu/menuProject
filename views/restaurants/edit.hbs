@@ -25,7 +25,8 @@
                     </div>
                     </div>
                 </div>
-                
+
+
                 {{#if restaurant.phoneNumber}}
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
@@ -41,7 +42,7 @@
                 </div>
                 {{/if}}
 
-                {{#if restaurant.address}}         
+                {{#if restaurant.address}}
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -62,12 +63,32 @@
                         Category
                     </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         {{restaurant.category}}
                     </div>
                     </div>
                 </div>
+
+{{#if restaurant.services}}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Services
+                    </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body row  d-flex justify-content-center align-items-center text-center">
+                        {{#each restaurant.services as |services|}}
+                        <ul class="p-0 d-flex col-6 d-flex justify-content-center align-items-center text-center ">
+                            <ol class="p-0 ">{{services}}</ol>
+                        </ul>
+                        {{/each}}
+                    </div>
+                    </div>
+                </div>
+{{/if}}
+
             </div>
 
                 <div class="d-grid gap-3 d-md-flex justify-content-md-end col-12">
@@ -170,9 +191,11 @@
                         <label for="allergens" style="primary-color">Services</label>
                         <div class="input-group mb-4 w-100 ">
                           <div class="form-check form-switch  overflow-auto restaurants-list bg-white  w-100">
+                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services" {{#if servicesRestaurant}} checked {{/if}}  value="Table Service"/>
+                                <label class="form-check-label mt-2 col-12 text-l" for="services">Table Service</label>
                               {{#each servicesRestaurant as |services|}}
-                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services"  value="{{services}}"/>
-                                <label class="form-check-label mt-2 col-12 text-l" for="{{services}}">{{services}}</label>
+                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services"   value="{{services}}"/>
+                                <label class="form-check-label mt-2 col-12 text-l" for="{{services}}" >{{services}}</label>
                               {{/each}}
                           </div>
                         </div>

@@ -75,16 +75,18 @@
                         {{#if errors.description }}<div class="invalid-feedback">{{ errors.description }}</div>{{/if}}
                       </div>
                       
-
                         <label for="allergens" style="primary-color">Services</label>
                         <div class="input-group mb-4 w-100 ">
                           <div class="form-check form-switch  overflow-auto restaurants-list bg-white  w-100">
+                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services" {{#if servicesRestaurant}} checked {{/if}}  value="Table Service"/>
+                                <label class="form-check-label mt-2 col-12 text-l" for="services">Table Service</label>
                               {{#each servicesRestaurant as |services|}}
-                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services"  value="{{services}}"/>
-                                <label class="form-check-label mt-2 col-12 text-l" for="{{services}}">{{services}}</label>
+                                <input class="form-check-input col-12 mt-3 bug" type="checkbox" id="services" name="services"   value="{{services}}"/>
+                                <label class="form-check-label mt-2 col-12 text-l" for="{{services}}" >{{services}}</label>
                               {{/each}}
                           </div>
                         </div>
+                        
 
 
                       <hr class="mt-3"/>    

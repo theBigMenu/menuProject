@@ -63,12 +63,32 @@
                         Category
                     </button>
                     </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         {{restaurant.category}}
                     </div>
                     </div>
                 </div>
+
+{{#if restaurant.services}}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Services
+                    </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body row  d-flex justify-content-center align-items-center text-center">
+                        {{#each restaurant.services as |services|}}
+                        <ul class="p-0 d-flex col-6 d-flex justify-content-center align-items-center text-center ">
+                            <ol class="p-0 ">{{services}}</ol>
+                        </ul>
+                        {{/each}}
+                    </div>
+                    </div>
+                </div>
+{{/if}}
+
             </div>
 
                 <div class="d-grid gap-3 d-md-flex justify-content-md-end col-12">

@@ -88,6 +88,11 @@ const restaurantSchema = new Schema ({
 restaurantSchema.pre("validate", function (next) {
     this.logo = this.logo || undefined;
     this.description = this.description || undefined;
+
+    if(this.services.includes('none')){
+        this.services = [undefined]
+    }
+
     next();
 });
 

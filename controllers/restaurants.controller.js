@@ -32,8 +32,13 @@ module.exports.create = (req, res, next) => {
     const restaurant = {
         ...req.body,
         user:req.user.id,
-        logo: req.file.path
     };
+
+    if(req.file){
+        restaurant.logo = req.file.path
+        restaurant.save()
+    } 
+
 Restaurant.create(restaurant)
 
     .then((restaurant) =>{
@@ -86,8 +91,12 @@ module.exports.update = (req, res, next) => {
 
     Restaurant.findByIdAndUpdate(req.params.id, req.body)
     .then((restaurant) => { 
-        restaurant.logo = req.file.path
-        restaurant.save()
-        res.redirect("/restaurants");
+        if(req.file){
+            restaurant.logo = req.file.path
+            restaurant.save()
+            res.redirect(`/restaurants/${req.params.id}`);
+        } else {
+            res.redirect(`/restaurants/${req.params.id}`);
+        }
     });
 }
