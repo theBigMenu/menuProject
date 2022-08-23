@@ -19,13 +19,15 @@
                             <h1 class="primary-color"><strong>{{product.name}}</strong></h1>
                             <h2 class="card-title text-black">Price: {{product.price}}€</h2>                            
                             <h4 class="text-black">{{product.description}}</h4>
+
+                            {{#if product.allergens}}
                             <h4 class="text-black text-l mt-5 primary-color"><strong class="primary-color">Allergens:</strong></h4>
                             <ul class="">
                             {{#each product.allergens as |allergen|}}
                                     <li id="{{allergen}}" class="text-l"><h5> {{allergen}}</h5></li>
                             {{/each}}
                             </ul>
-
+                            {{/if}}
 
 
             </div>

@@ -11,10 +11,10 @@ router.get('/', misc.home);
 router.get('/contacts', misc.contacts);
 
 router.get("/restaurants", secure.isAuthenticated, restaurants.list);
-router.get("/restaurants/new", secure.isAuthenticated, upload.single('logo'), restaurants.new);
+router.get("/restaurants/new", secure.isAuthenticated, restaurants.new);
 router.get("/restaurants/:id", secure.isAuthenticated, restaurants.detail);
 router.post("/restaurants", secure.isAuthenticated, upload.single('logo'), restaurants.create);
-router.get('/restaurants/:id/edit',secure.isAuthenticated, upload.single('logo'), restaurants.edit);
+router.get('/restaurants/:id/edit',secure.isAuthenticated, restaurants.edit);
 router.post('/restaurants/:id/edit',secure.isAuthenticated, upload.single('logo'), restaurants.update);
 router.post("/restaurants/:id/delete", secure.isAuthenticated, restaurants.delete);
 
