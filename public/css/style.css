@@ -55,7 +55,7 @@ body{
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-size: 500% 500%;
+  background-size: 700% 700%;
   background-image: linear-gradient(
         -45deg, 
         #ffffff 0%, 
@@ -939,4 +939,9 @@ div > input.form-check-input:first-child {
 
 .menu-title{
   min-height: 50px;
+}
+
+.icons-home{
+  width: 100%;
+  max-width: 200px;
 }
