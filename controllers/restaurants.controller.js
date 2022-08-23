@@ -5,11 +5,21 @@ const categoriesRestaurant = require('../data/categories.restaurants.json')
 const servicesRestaurant = require('../data/services.restaurants.json')
 
 module.exports.list = (req, res, next) => {
-    Restaurant.find({user:req.user.id})
-    .then(restaurants => {
-        res.render('restaurants/list', { restaurants })
-    })
-    .catch(next)
+    const user = req.user.id
+
+    if (user && req.query.name){
+        Restaurant.find({$and: [ { user:req.user.id}, { name:req.query.name }]})
+        .then(restaurants => {
+            res.render('restaurants/list', { restaurants, user })
+        })
+        .catch(next)
+    } else if(user) {
+        Restaurant.find({ user:req.user.id })
+        .then(restaurants => {
+            res.render('restaurants/list', { restaurants, user })
+        })
+        .catch(next)
+    }
 }
 
 module.exports.detail = (req, res, next) => {
@@ -21,6 +31,8 @@ module.exports.detail = (req, res, next) => {
         )
     .catch((error) => next(error));
 };
+
+
 
 module.exports.new = (req, res, next) => {
     res.render("restaurants/new", {categoriesRestaurant, servicesRestaurant});

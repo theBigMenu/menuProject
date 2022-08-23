@@ -9,6 +9,13 @@
             <h1 class="mb-5">ALL MY RESTAURANTS</h1>
             <hr>
 
+            <form>
+                    <input type="text" class="form-control" name="name" placeholder="Search for restaurants"/>
+                    <button type="submit" class="btn btn-primary mt-2">Search</button>
+                    <input type="text" class="form-control invisible" name="name" value="{{user}}" />
+            </form>
+            
+
             <div class="row col-12  d-flex justify-content-center align-items-center text-center parent">
             {{#each restaurants as |restaurant|}}
                 <div class="col-5 d-flex justify-content-center align-items-center text-center mb-4 card card-body mx-2 h-100 restaurant-card">

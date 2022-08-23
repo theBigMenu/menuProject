@@ -8,6 +8,7 @@ const { misc, menus, products, auth, users, restaurants, categories} = require('
 
 
 router.get('/', misc.home);
+router.get('/contacts', misc.contacts);
 
 router.get("/restaurants", secure.isAuthenticated, restaurants.list);
 router.get("/restaurants/new", secure.isAuthenticated, upload.single('logo'), restaurants.new);
