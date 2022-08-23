@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 const { Menu, Restaurant } = require("../models");
 
 module.exports.list = (req, res, next) => {
-  Menu.find()
+  Menu.find(req.query)
     .then(menus => {
       res.render('menus/list', { menus })
     })
     .catch(next)
+
 }
 
 module.exports.detail = (req, res, next) => {
