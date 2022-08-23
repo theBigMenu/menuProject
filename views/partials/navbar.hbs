@@ -1,42 +1,42 @@
-<div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around px-5 animate__animated animate__fadeInDownBig">
+<div  class="d-flex navbar col-12 shadow fixed-top glassmorphism justify-content-around px-5 animate__animated animate__fadeInDownBig height-100">
 
-  <nav class="d-flex navbar col-12">
-      <div class="navbar-brand col-4 m-0">
+  <nav class="d-flex navbar col-12 row">
+      <div class="navbar-brand col-6 col-sm-2 col-md-4 col-lg-4 col-xl-4 m-0">
           <a  href="/">
-              <img src="\images\Logo_BigMenu.svg" width="90" height="90" alt="">
+              <img src="\images\Logo_BigMenu.svg" class="bigmenu-logo-nav">
           </a>
       </div>
 
-    <div class="col-2 d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-end ">
+    <div class="col-6 col-sm-8 col-md-3 col-lg-3 col-xl-3 d-grid {{#if currentUser}}gap-0{{else}}gap-2 {{/if}} d-md-flex justify-content-end ">
       {{#if currentUser}}
-      <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo ">
-       <div class="col-12 p-0">
-          <p>Welcome Back <a class="back" href="/users/{{currentUser.id}}"> <strong> {{currentUser.name}} </strong> </a></p>
+      <div class="row col-12 justify-content-end align-items-center text-center position-menu-logo ">
+          <div class="col-4 p-0   d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
+            <p>Welcome Back <a class="back" href="/users/{{currentUser.id}}"> <strong> {{currentUser.name}} </strong> </a></p>
+          </div>
+
+          <div class="col-3  align-items-center text-center position-menu-logo p-0  d-none d-sm-none d-md-flex d-lg-flex d-xl-flex">
+            <a href="/users/{{currentUser.id}}"><img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="..."></a>
+          </div> 
+
+          <div class="col-12 d-flex d-sm-flex col-sm-12 col-md-12 col-lg-3 col-xl-3 hamburger p-0 height-100" id="hamburgerMenu"></div>
+          </div>
+      {{else}}
+      <div class="row col-12 align-items-center text-center position-menu-logo ">
+        <div class="col-10 p-0">
+          <a href="/login"><button class="btn btn-primary mx-1"> Login</button></a>
+          <a href="/register"><button class="btn btn-secondary mx-1"> Sign Up</button></a>
         </div>
       </div>
-                    <div class="row col-6 justify-content-center align-items-center text-center position-menu-logo p-0">
-                        <div class="position-relative profile-picture  d-flex justify-content-center align-items-center text-center">
-                        </div> 
-
-                        <div class="position-absolute container-menu-logo d-flex justify-content-center align-items-center text-center p-0">
-                            <a href="/users/{{currentUser.id}}"><img src="{{currentUser.image}}" class="card-img-top profile-picture" alt="..."></a>
-                        </div>
-                    </div>
-
-      {{else}}
-        <a href="/login"><button class="btn btn-primary mx-1"> Login</button></a>
-        <a href="/register"><button class="btn btn-secondary mx-1"> Sign Up</button></a>
       {{/if}}
-    <div class="col-0 hamburger" id="hamburgerMenu"></div>
-
     </div>
+
   </nav>
 </div>
 
 
 
 <div class="popup hidden" id="myMenuNav">
-	<div class=" wrapper background-primary-color list-group d-flex justify-content-center align-items-center">
+	<div class=" wrapper col-4 background-primary-color list-group d-flex justify-content-center align-items-center">
 
 
 

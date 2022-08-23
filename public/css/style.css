@@ -199,12 +199,14 @@ hr.black {
 	background: rgba(100, 100, 100, 0.6);
 	position: fixed;
 	z-index: 60;
-	height: 100vw ;
-	width: 100vw;
+  min-height: 100%;
+	height: 100% ;
+	width: 100%;
 	left: 0;
 	top: 0;
   animation: fadein 2s;
   opacity: 1;
+  max-height: 100vh;
 }
 
 @keyframes fadein {
@@ -219,10 +221,11 @@ hr.black {
   transform: translate(0%, 0%);
   right: 0%;
   top: 100px;
-
+  min-width: 200px;
   width: 20vw;
-  animation: widhtWrapper 2s;
+  animation: widhtWrapper 2s, minwidth 2s;
 }
+
 
 
 @keyframes widhtWrapper {
@@ -230,9 +233,9 @@ hr.black {
   100% { width: 20vw}
 }
 
-@keyframes heightWrapper {
-  0% { height: 0vh }
-  100% { height: 100vh}
+@keyframes minwidth {
+  0% { min-width: 0vh }
+  100% { min-width: 200px}
 }
 
 .hidden{
@@ -241,6 +244,11 @@ hr.black {
 
 #hamburgerMenu{
   z-index: 100;
+}
+
+.hamburger{
+  max-width: 60px;
+  height: 40px;
 }
 
 .nav-group-item{
@@ -945,3 +953,13 @@ div > input.form-check-input:first-child {
   width: 100%;
   max-width: 200px;
 }
+
+.bigmenu-logo-nav{
+  max-height: 40px;
+}
+
+.height-100{
+  height: 100px;
+  max-height: 100px;
+}
+
