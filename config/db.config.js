@@ -4,7 +4,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/project2'
 mongoose.connect(MONGODB_URI);
 
 // When successfully connected
-mongoose.connection.on('connected', () => console.log('Mongoose default connection open'));
+mongoose.connection.on('connected', () => console.log(`Mongoose default connection Success: ${MONGODB_URI}`));
 
 // If the connection throws an error
 mongoose.connection.on('error', err => console.log(`Mongoose default connection error: ${err}`));
