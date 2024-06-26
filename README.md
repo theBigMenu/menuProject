@@ -1,4 +1,3 @@
-
 # 🍽️ Menu Project
 
 ![Big_Menu_1](https://lh3.googleusercontent.com/d/1C_ICEORfRBZdiHL83SSLJ4CU-bmOX_xO)
@@ -8,71 +7,85 @@
 ![Big_Menu_5](https://lh3.googleusercontent.com/d/1JFbuVDf9_xEwDwvFn081oAxpSJ25mAvg)
 ![Big_Menu_6](https://lh3.googleusercontent.com/d/1SMG5982fnJTPqtUTr6sLMsu3PMOzdCnB)
 
+Big Menu is a desktop web application for the efficient management of digital menus in restaurants. It enables owners to update their culinary offerings in real-time with simple operations. The MVC architecture ensures organized code and scalability.
 
-Este proyecto está diseñado para crear y gestionar menús para restaurantes. Incluye diversas funcionalidades como agregar productos, categorizar ítems, buscar y gestionar información del restaurante.
+## Table of Contents
 
-## 🚀 Características
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Routes Documentation](#routes-documentation)
 
-### Menú
-- **Título**: Título del menú.
-- **Logo**: Logo del restaurante.
-- **Productos**: Lista de productos disponibles.
-- **Fondo**: Diseño de fondo del menú.
+## Overview
+My second project in the Ironhack web development bootcamp was the creation of a web application designed for digital menu management in restaurants or restaurant chains. This web app allows CRUD operations (Create, Read, Update, Delete) on menus, making it easy for owners to efficiently update and maintain their culinary offerings.
 
-### Categorías
-- **Nombre**: Nombre de la categoría.
-- **Descripción**: Descripción breve de la categoría.
-- **Tags**: Tags opcionales para mejor categorización.
+## 🚀 Features
 
-### Productos
-- **Categorías**: Enlazados a categorías.
-- **Nombre**: Nombre del producto.
-- **Precio**: Precio del producto.
-- **Imagen**: Imagen opcional del producto.
-- **Alérgenos**: Información sobre alérgenos.
+### Menu
+- **Title**: Menu title.
+- **Logo**: Restaurant logo.
+- **Products**: List of available products.
+- **Background**: Menu background design.
 
-### Búsqueda y Filtros
-- **Buscar por Nombre**: Encontrar productos por su nombre.
-- **Filtrar por Alérgenos**: Filtrar productos basados en alérgenos.
-- **Ordenar por Precio**: Ordenar productos por su precio.
-- **Ordenar Alfabéticamente**: Ordenar productos alfabéticamente.
+### Categories
+- **Name**: Category name.
+- **Description**: Brief description of the category.
+- **Tags**: Optional tags for better categorization.
 
-### Restaurantes
-- **Dirección**: Ubicación del restaurante.
-- **Teléfonos**: Números de contacto.
-- **Emails**: Correos de contacto.
-- **Delivery**: Indica si está disponible el servicio de entrega.
-- **Horarios**: Horarios de operación.
+### Products
+- **Categories**: Linked to categories.
+- **Name**: Product name.
+- **Price**: Product price.
+- **Image**: Optional product image.
+- **Allergens**: Information on allergens.
 
-### Información Extra de Restaurantes
-- **Último Pedido**: Hora límite para hacer pedidos.
-- **Días Festivos**: Festivos del restaurante.
-- **Horas de Apertura**: Horas de apertura generales.
-- **Redes Sociales**: Enlaces a redes sociales.
-- **Sitio Web**: Página web del restaurante.
+### Search and Filters
+- **Search by Name**: Find products by their name.
+- **Filter by Allergens**: Filter products based on allergen information.
+- **Sort by Price**: Sort products by their price.
+- **Sort Alphabetically**: Sort products alphabetically.
 
-## 🛠️ Tecnologías Utilizadas
-- **Handlebars**: Para plantillas.
-- **JavaScript**: Para funcionalidad.
-- **CSS**: Para estilos.
+### Restaurants
+- **Address**: Restaurant location.
+- **Phones**: Contact numbers.
+- **Emails**: Contact emails.
+- **Delivery**: Indicates if delivery is available.
+- **Schedules**: Operating hours.
 
-## 📦 Instalación
-Para obtener una copia local y ejecutarla, sigue estos sencillos pasos:
+### Extra Information for Restaurants
+- **Last Order Hours**: Latest time to place an order.
+- **Holidays**: Restaurant holidays.
+- **Open Hours**: General opening hours.
+- **Social Media**: Social media links.
+- **Website**: Restaurant website.
 
-### Prerrequisitos
-- Node.js instalado
-- npm instalado
+## 🛠️ Technologies Used
+- **Handlebars**: For templating.
+- **JavaScript**: For functionality.
+- **CSS**: For styling.
 
-### Instalación
-1. Clona el repositorio
+## 📦 Installation
+To get a local copy up and running, follow these simple steps:
+
+### Prerequisites
+- Node.js installed
+- npm installed
+
+### Installation
+1. Clone the repo
    ```sh
    git clone https://github.com/theBigMenu/menuProject.git
    ```
-2. Instala los paquetes NPM
+2. Install NPM packages
    ```sh
    npm install
    ```
-3. Ejecuta la aplicación
+3. Run the application
    ```sh
    npm start
    ```
