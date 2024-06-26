@@ -9,7 +9,7 @@
 
 Big Menu is a desktop web application for efficiently managing digital menus in restaurants. It enables owners to update their culinary offerings in real time with simple operations. The MVC architecture ensures organized code and scalability.
 
-- [Website]([https://alkitu.com/gousty](https://menuproject-production.up.railway.app)
+- [Website](https://alkitu.com/gousty](https://menuproject-production.up.railway.app)
 
 ## Table of Contents
 
