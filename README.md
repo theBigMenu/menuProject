@@ -7,7 +7,9 @@
 ![Big_Menu_5](https://lh3.googleusercontent.com/d/1JFbuVDf9_xEwDwvFn081oAxpSJ25mAvg)
 ![Big_Menu_6](https://lh3.googleusercontent.com/d/1SMG5982fnJTPqtUTr6sLMsu3PMOzdCnB)
 
-Big Menu is a desktop web application for the efficient management of digital menus in restaurants. It enables owners to update their culinary offerings in real-time with simple operations. The MVC architecture ensures organized code and scalability.
+Big Menu is a desktop web application for efficiently managing digital menus in restaurants. It enables owners to update their culinary offerings in real time with simple operations. The MVC architecture ensures organized code and scalability.
+
+  - [Website]([https://alkitu.com/gousty](https://menuproject-production.up.railway.app)
 
 ## Table of Contents
 
@@ -90,95 +92,94 @@ To get a local copy up and running, follow these simple steps:
    npm start
    ```
 
-## 🤝 Contribuyendo
-Las contribuciones son lo que hacen que la comunidad de código abierto sea un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es **muy apreciada**.
+## 🤝 Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Haz un Fork del Proyecto
-2. Crea tu Rama de Característica (`git checkout -b feature/AmazingFeature`)
-3. Realiza tus Cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Haz Push a la Rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📜 Licencia
-Distribuido bajo la Licencia MIT. Ver `LICENSE` para más información.
+## 📜 License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-## 📞 Contacto
-Enlace del Proyecto: [https://github.com/theBigMenu/menuProject](https://github.com/theBigMenu/menuProject)
-
----
-
-## 📚 Documentación de las Rutas
-
-### 🏠 Rutas Principales
-
-| Ruta       | Método | Descripción                | Middleware                |
-|------------|--------|----------------------------|---------------------------|
-| `/`        | GET    | Muestra la página principal| -                         |
-| `/contacts`| GET    | Muestra la página de contactos | -                       |
-
-### 🍴 Rutas de Restaurantes
-
-| Ruta                      | Método | Descripción                            | Middleware                          |
-|---------------------------|--------|----------------------------------------|-------------------------------------|
-| `/restaurants`            | GET    | Lista todos los restaurantes           | `secure.isAuthenticated`            |
-| `/restaurants/new`        | GET    | Muestra el formulario para nuevo restaurante | `secure.isAuthenticated`      |
-| `/restaurants/:id`        | GET    | Muestra los detalles de un restaurante específico | `secure.isAuthenticated`  |
-| `/restaurants`            | POST   | Crea un nuevo restaurante              | `secure.isAuthenticated`, `upload.single('logo')` |
-| `/restaurants/:id/edit`   | GET    | Muestra el formulario de edición       | `secure.isAuthenticated`            |
-| `/restaurants/:id/edit`   | POST   | Actualiza la información del restaurante | `secure.isAuthenticated`, `upload.single('logo')` |
-| `/restaurants/:id/delete` | POST   | Elimina un restaurante específico      | `secure.isAuthenticated`            |
-
-### 📋 Rutas de Menús
-
-| Ruta               | Método | Descripción                            | Middleware                |
-|--------------------|--------|----------------------------------------|---------------------------|
-| `/menus`           | GET    | Lista todos los menús                  | `secure.isAuthenticated`  |
-| `/menus/:id`       | GET    | Muestra los detalles de un menú específico | `secure.isAuthenticated`  |
-| `/menus/:id/new`   | GET    | Muestra el formulario para nuevo menú  | `secure.isAuthenticated`  |
-| `/menus/:id/create`| POST   | Crea un nuevo menú                     | `secure.isAuthenticated`  |
-| `/menus/:id/edit`  | GET    | Muestra el formulario de edición       | `secure.isAuthenticated`  |
-| `/menus/:id/edit`  | POST   | Actualiza la información del menú      | `secure.isAuthenticated`  |
-| `/menus/:id/delete`| POST   | Elimina un menú específico             | `secure.isAuthenticated`  |
-
-### 📁 Rutas de Categorías
-
-| Ruta                    | Método | Descripción                            | Middleware                |
-|-------------------------|--------|----------------------------------------|---------------------------|
-| `/categories`           | GET    | Lista todas las categorías             | `secure.isAuthenticated`  |
-| `/categories/:id`       | GET    | Muestra los detalles de una categoría específica | `secure.isAuthenticated`  |
-| `/categories/:id/new`   | GET    | Muestra el formulario para nueva categoría | `secure.isAuthenticated`  |
-| `/categories/:id/create`| POST   | Crea una nueva categoría               | `secure.isAuthenticated`  |
-| `/categories/:id/edit`  | GET    | Muestra el formulario de edición       | `secure.isAuthenticated`  |
-| `/categories/:id/edit`  | POST   | Actualiza la información de la categoría | `secure.isAuthenticated`  |
-| `/categories/:id/delete`| POST   | Elimina una categoría específica       | `secure.isAuthenticated`  |
-
-### 🛒 Rutas de Productos
-
-| Ruta                   | Método | Descripción                            | Middleware                |
-|------------------------|--------|----------------------------------------|---------------------------|
-| `/products`            | GET    | Lista todos los productos              | `secure.isAuthenticated`  |
-| `/products/:id`        | GET    | Muestra los detalles de un producto específico | `secure.isAuthenticated`  |
-| `/products/:id/new`    | GET    | Muestra el formulario para nuevo producto | `secure.isAuthenticated`  |
-| `/products/:id/create` | POST   | Crea un nuevo producto                 | `secure.isAuthenticated`  |
-| `/products/:id/edit`   | GET    | Muestra el formulario de edición       | `secure.isAuthenticated`  |
-| `/products/:id/edit`   | POST   | Actualiza la información del producto  | `secure.isAuthenticated`  |
-| `/products/:id/delete` | POST   | Elimina un producto específico         | `secure.isAuthenticated`  |
-
-### 🔐 Rutas de Autenticación
-
-| Ruta        | Método | Descripción                      | Middleware                |
-|-------------|--------|----------------------------------|---------------------------|
-| `/register` | GET, POST | Muestra el formulario de registro y registra un nuevo usuario | -                       |
-| `/login`    | GET, POST | Muestra el formulario de inicio de sesión y autentica al usuario | -                       |
-| `/logout`   | GET    | Cierra la sesión del usuario     | -                         |
-
-### 👤 Rutas de Usuarios
-
-| Ruta                 | Método | Descripción                            | Middleware                |
-|----------------------|--------|----------------------------------------|---------------------------|
-| `/users/:id`         | GET    | Muestra los detalles de un usuario específico | `secure.isAuthenticated`  |
-| `/users/:id/confirm` | GET    | Confirma la cuenta de un usuario       | -                         |
-| `/users/:id/edit`    | GET, POST | Muestra el formulario de edición y actualiza la información del usuario | `secure.isAuthenticated`  |
+## 📞 Contact
+Project Link: [https://github.com/theBigMenu/menuProject](https://github.com/theBigMenu/menuProject)
 
 ---
 
+## 📚 Routes Documentation
+
+### 🏠 Main Routes
+
+| Route       | Method | Description                | Middleware                |
+|-------------|--------|----------------------------|---------------------------|
+| `/`         | GET    | Displays the home page     | -                         |
+| `/contacts` | GET    | Displays the contacts page | -                         |
+
+### 🍴 Restaurant Routes
+
+| Route                        | Method | Description                            | Middleware                          |
+|------------------------------|--------|----------------------------------------|-------------------------------------|
+| `/restaurants`               | GET    | Lists all restaurants                  | `secure.isAuthenticated`            |
+| `/restaurants/new`           | GET    | Displays the form for a new restaurant | `secure.isAuthenticated`            |
+| `/restaurants/:id`           | GET    | Displays details of a specific restaurant | `secure.isAuthenticated`        |
+| `/restaurants`               | POST   | Creates a new restaurant               | `secure.isAuthenticated`, `upload.single('logo')` |
+| `/restaurants/:id/edit`      | GET    | Displays the edit form                 | `secure.isAuthenticated`            |
+| `/restaurants/:id/edit`      | POST   | Updates restaurant information         | `secure.isAuthenticated`, `upload.single('logo')` |
+| `/restaurants/:id/delete`    | POST   | Deletes a specific restaurant          | `secure.isAuthenticated`            |
+
+### 📋 Menu Routes
+
+| Route                        | Method | Description                            | Middleware                |
+|------------------------------|--------|----------------------------------------|---------------------------|
+| `/menus`                     | GET    | Lists all menus                        | `secure.isAuthenticated`  |
+| `/menus/:id`                 | GET    | Displays details of a specific menu    | `secure.isAuthenticated`  |
+| `/menus/:id/new`             | GET    | Displays the form for a new menu       | `secure.isAuthenticated`  |
+| `/menus/:id/create`          | POST   | Creates a new menu                     | `secure.isAuthenticated`  |
+| `/menus/:id/edit`            | GET    | Displays the edit form                 | `secure.isAuthenticated`  |
+| `/menus/:id/edit`            | POST   | Updates menu information               | `secure.isAuthenticated`  |
+| `/menus/:id/delete`          | POST   | Deletes a specific menu                | `secure.isAuthenticated`  |
+
+### 📁 Category Routes
+
+| Route                        | Method | Description                            | Middleware                |
+|------------------------------|--------|----------------------------------------|---------------------------|
+| `/categories`                | GET    | Lists all categories                   | `secure.isAuthenticated`  |
+| `/categories/:id`            | GET    | Displays details of a specific category | `secure.isAuthenticated`  |
+| `/categories/:id/new`        | GET    | Displays the form for a new category   | `secure.isAuthenticated`  |
+| `/categories/:id/create`     | POST   | Creates a new category                 | `secure.isAuthenticated`  |
+| `/categories/:id/edit`       | GET    | Displays the edit form                 | `secure.isAuthenticated`  |
+| `/categories/:id/edit`       | POST   | Updates category information           | `secure.isAuthenticated`  |
+| `/categories/:id/delete`     | POST   | Deletes a specific category            | `secure.isAuthenticated`  |
+
+### 🛒 Product Routes
+
+| Route                        | Method | Description                            | Middleware                |
+|------------------------------|--------|----------------------------------------|---------------------------|
+| `/products`                  | GET    | Lists all products                     | `secure.isAuthenticated`  |
+| `/products/:id`              | GET    | Displays details of a specific product | `secure.isAuthenticated`  |
+| `/products/:id/new`          | GET    | Displays the form for a new product    | `secure.isAuthenticated`  |
+| `/products/:id/create`       | POST   | Creates a new product                  | `secure.isAuthenticated`  |
+| `/products/:id/edit`         | GET    | Displays the edit form                 | `secure.isAuthenticated`  |
+| `/products/:id/edit`         | POST   | Updates product information            | `secure.isAuthenticated`  |
+| `/products/:id/delete`       | POST   | Deletes a specific product             | `secure.isAuthenticated`  |
+
+### 🔐 Authentication Routes
+
+| Route        | Method    | Description                                       | Middleware                |
+|--------------|-----------|---------------------------------------------------|---------------------------|
+| `/register`  | GET, POST | Displays the registration form and registers a new user | -                     |
+| `/login`     | GET, POST | Displays the login form and authenticates the user | -                     |
+| `/logout`    | GET       | Logs out the user                                  | -                         |
+
+### 👤 User Routes
+
+| Route                 | Method    | Description                            | Middleware                |
+|-----------------------|-----------|----------------------------------------|---------------------------|
+| `/users/:id`          | GET       | Displays details of a specific user    | `secure.isAuthenticated`  |
+| `/users/:id/confirm`  | GET       | Confirms a user's account              | -                         |
+| `/users/:id/edit`     | GET, POST | Displays the edit form and updates user information | `secure.isAuthenticated`  |
+
+---
